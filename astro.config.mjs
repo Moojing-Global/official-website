@@ -5,7 +5,7 @@ import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import cloudflare from "@astrojs/cloudflare";
-import siteConfig from "./src/config/siteConfig.json";
+import { siteConfig } from "./src/config/siteConfig.ts";
 
 // https://astro.build/config
 export default defineConfig({

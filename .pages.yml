@@ -37,8 +37,8 @@ content:
         type: object
         fields:
           - name: src
-            label: Image Path
-            type: string
+            label: Image
+            type: image
             required: true
           - name: alt
             label: Image Alt Text
