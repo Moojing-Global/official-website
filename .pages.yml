@@ -1,3 +1,10 @@
+media:
+  - name: media
+    label: Media
+    input: src/media
+    output: /media
+    path: /media
+
 content:
   - name: blog
     label: Blog Posts
