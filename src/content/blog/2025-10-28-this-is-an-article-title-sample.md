@@ -1,7 +1,11 @@
 ---
 title: This is an article title sample
 pubDate: 2025-10-28
-description: This is a meta Description. Lorem Ipsum. incididunt velit amet labore ipsum elit pariatur non incididunt quis eiusmod nostrud dolore proident et eu ipsum irure adipisicing consectetur
+description: This is a meta Description. Lorem Ipsum. incididunt velit amet
+  labore ipsum elit pariatur non incididunt quis eiusmod nostrud dolore proident
+  et eu ipsum irure adipisicing consectetur
+featured_image: /media/Big_image.jpg
+tags: energy drinks, tmall
 ---
 ### Lorem Ipsum Dolor Sit Amet
 
@@ -58,7 +62,6 @@ This is `inline code` in a sentence.
     *   Nested item 2
         
         *   Deeply nested item
-            
 *   Fourth item
     
 
