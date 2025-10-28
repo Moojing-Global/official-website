@@ -1,6 +1,7 @@
 ---
-import Head from "@components/head.astro";
+import BaseHead from "@components/BaseHead.astro";
 import "../styles/global.css";
+import "@tailwindplus/elements";
 
 export interface Props {
     title?: string;
@@ -18,7 +19,7 @@ export interface Props {
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Head {...Astro.props} />
+        <BaseHead {...Astro.props} />
     </head>
     <body>
         <slot />

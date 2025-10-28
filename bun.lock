@@ -12,6 +12,7 @@
         "@iconify-json/tabler": "^1.2.23",
         "@iconify/icons-tabler": "^1.2.95",
         "@tailwindcss/vite": "^4.1.16",
+        "@tailwindplus/elements": "^1.0.18",
         "astro": "^5.15.1",
         "astro-icon": "^1.1.5",
         "prettier": "^3.6.2",
@@ -334,6 +335,8 @@
     "@tailwindcss/typography": ["@tailwindcss/typography@0.5.19", "", { "dependencies": { "postcss-selector-parser": "6.0.10" }, "peerDependencies": { "tailwindcss": ">=3.0.0 || insiders || >=4.0.0-alpha.20 || >=4.0.0-beta.1" } }, "sha512-w31dd8HOx3k9vPtcQh5QHP9GwKcgbMp87j58qi6xgiBnFFtKEAgCWnDw4qUT8aHwkCp8bKvb/KGKWWHedP0AAg=="],
 
     "@tailwindcss/vite": ["@tailwindcss/vite@4.1.16", "", { "dependencies": { "@tailwindcss/node": "4.1.16", "@tailwindcss/oxide": "4.1.16", "tailwindcss": "4.1.16" }, "peerDependencies": { "vite": "^5.2.0 || ^6 || ^7" } }, "sha512-bbguNBcDxsRmi9nnlWJxhfDWamY3lmcyACHcdO1crxfzuLpOhHLLtEIN/nCbbAtj5rchUgQD17QVAKi1f7IsKg=="],
+
+    "@tailwindplus/elements": ["@tailwindplus/elements@1.0.18", "", {}, "sha512-JvqwL+6LwDIxC5zV9kAcI1wttpkUhgkGr7bcuYGH7fxnmgvVJglBERqlgPGGDXWB+lpuFgjgkvtK3pMm/7MvTA=="],
 
     "@trysound/sax": ["@trysound/sax@0.2.0", "", {}, "sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA=="],
 
