@@ -11,6 +11,6 @@
     "enabled": true
   },
   "build": {
-    "command": "bun config set optional true && bun ci --include=optional && bun run build"
+    "command": "bun run build"
   }
 }
