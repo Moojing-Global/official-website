@@ -14,7 +14,6 @@ export interface SiteConfig {
   url: string;
   title: string;
   description: string;
-  author: string;
   ogImage: {
     src: string;
     alt: string;

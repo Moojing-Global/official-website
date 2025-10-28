@@ -1,11 +1,40 @@
-media:
-  - name: media
-    label: Media
-    input: public/media
-    output: /media
-    path: /media
-
 content:
+  - name: blog
+    label: Blog Posts
+    type: collection
+    path: src/content/blog
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: pubDate
+        label: Publication Date
+        type: date
+        required: true
+      - name: description
+        label: Description
+        type: string
+        required: false
+      - name: featured_image
+        label: Featured Image
+        type: image
+        required: false
+      - name: authors
+        label: Authors
+        type: select
+        multiple: true
+        options: content:authors
+        required: false
+      - name: tags
+        label: Tags (comma-separated)
+        type: string
+        required: false
+      - name: body
+        label: Body
+        type: rich-text
+        required: true
+
   - name: authors
     label: Authors
     type: collection
@@ -62,10 +91,6 @@ content:
         label: Default SEO Description
         type: string
         required: true
-      - name: author
-        label: Author Name
-        type: string
-        required: true
       - name: ogImage
         label: Open Graph Image
         type: object
@@ -91,36 +116,9 @@ content:
             type: string
             required: false
 
-  - name: blog
-    label: Blog Posts
-    type: collection
-    path: src/content/blog
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: pubDate
-        label: Publication Date
-        type: date
-        required: true
-      - name: description
-        label: Description
-        type: string
-        required: false
-      - name: featured_image
-        label: Featured Image
-        type: image
-        required: false
-      - name: authors
-        label: Authors (comma-separated IDs)
-        type: string
-        required: false
-      - name: tags
-        label: Tags (comma-separated)
-        type: string
-        required: false
-      - name: body
-        label: Body
-        type: rich-text
-        required: true
+media:
+  - name: media
+    label: Media
+    input: public/media
+    output: /media
+    path: /media

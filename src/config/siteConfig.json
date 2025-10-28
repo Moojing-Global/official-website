@@ -3,7 +3,6 @@
   "url": "https://staging.moojing-global.com",
   "title": "My Astro Website",
   "description": "Welcome to my new Astro site!",
-  "author": "Your Name",
   "ogImage": {
     "src": "/media/Image from OpenGraph.png",
     "alt": "My Astro Website"
