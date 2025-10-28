@@ -54,8 +54,18 @@ Configured in `tsconfig.json`:
 ### SEO and Metadata
 
 - Global site configuration in `src/config/siteConfig.ts`
-- SEO component at `src/components/head.astro` handles meta tags, Open Graph, and Twitter cards
-- MainLayout (`src/layouts/MainLayout.astro`) accepts props: `title`, `description`, `canonical`, `image`, `imageAlt`, `type`, `noindex`
+- SEO component at `src/components/BaseHead.astro` handles meta tags, Open Graph, and Twitter cards
+- Image URLs are automatically encoded to handle spaces and special characters in filenames
+- MainLayout (`src/layouts/MainLayout.astro`) accepts props: `title`, `description`, `canonical`, `image`, `imageAlt`, `type`, `noindex`, `authors`
+
+### Authors System
+
+Authors are managed through a data file (`src/data/authors.json`) and can be edited via Pages CMS:
+
+- Authors data structure includes: `id`, `name`, `bio`, `avatar`, `email`, and `social` links
+- Blog posts reference authors by their `id` (comma-separated for multiple authors)
+- Author utilities in `src/utils/authors.ts` provide helper functions for loading and formatting author data
+- **Blog posts only** (not pages) can have authors - appears in SEO meta tags and displays author bio section
 
 ### Content Collections
 
@@ -64,7 +74,9 @@ Blog collection schema (`src/content/config.ts`):
 - `title: string` (required)
 - `pubDate: date` (required)
 - `description: string` (optional)
-- `tags: string | string[]` (optional) - Automatically transforms comma-separated strings to arrays
+- `featured_image: string` (optional)
+- `authors: string | string[]` (optional) - Comma-separated author IDs, automatically parsed to arrays
+- `tags: string | string[]` (optional) - Comma-separated tags, automatically parsed to arrays
 
 ### Deployment
 

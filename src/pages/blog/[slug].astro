@@ -1,6 +1,7 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
+import { getAuthorsByIds, formatAuthorNames } from "../../utils/authors";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
@@ -18,16 +19,27 @@ const description = post.data.description;
 const canonical = `/blog/${post.slug}`;
 const image = post.data.featured_image;
 const type = "article";
+
+// Load authors from the post data
+const authors = post.data.authors ? getAuthorsByIds(post.data.authors) : [];
 ---
 
-<MainLayout {title} {description} {canonical} {image} {type}>
+<MainLayout {title} {description} {canonical} {image} {type} {authors}>
     <article>
         <h1>{post.data.title}</h1>
-        <time>{post.data.pubDate.toLocaleDateString()}</time>
+        
+        <div class="post-meta">
+            {authors.length > 0 && (
+                <p class="authors">
+                    By {formatAuthorNames(authors)}
+                </p>
+            )}
+            <time>{post.data.pubDate.toLocaleDateString()}</time>
+        </div>
 
         {
             post.data.tags && (
-                <div>
+                <div class="tags">
                     {post.data.tags.map((tag) => (
                         <span class="tag">{tag}</span>
                     ))}
@@ -35,5 +47,35 @@ const type = "article";
             )
         }
         <Content />
+        
+        {authors.length > 0 && (
+            <div class="author-bio-section">
+                <h2>About the Author{authors.length > 1 ? 's' : ''}</h2>
+                {authors.map(author => (
+                    <div class="author-bio">
+                        {author.avatar && (
+                            <img src={author.avatar} alt={author.name} class="author-avatar" />
+                        )}
+                        <div class="author-info">
+                            <h3>{author.name}</h3>
+                            {author.bio && <p>{author.bio}</p>}
+                            {author.social && (
+                                <div class="author-social">
+                                    {author.social.website && (
+                                        <a href={author.social.website} target="_blank" rel="noopener noreferrer">Website</a>
+                                    )}
+                                    {author.social.twitter && (
+                                        <a href={author.social.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>
+                                    )}
+                                    {author.social.linkedin && (
+                                        <a href={author.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                    )}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        )}
     </article>
 </MainLayout>
