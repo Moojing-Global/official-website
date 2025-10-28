@@ -6,6 +6,12 @@ media:
     path: /media
 
 content:
+  - name: resources
+    label: Resources
+    type: file
+    options:
+      path: downloads
+      extensions: [pdf]
   - name: blog
     label: Blog Posts
     type: collection
