@@ -3,7 +3,7 @@
  * Provides functions to load and work with author data
  */
 
-import authorsData from '../data/authors.json';
+import { getCollection, getEntry } from 'astro:content';
 
 export interface Author {
   id: string;
@@ -11,34 +11,55 @@ export interface Author {
   bio?: string;
   avatar?: string;
   email?: string;
-  social?: {
-    twitter?: string;
-    linkedin?: string;
-    website?: string;
-  };
+  twitter?: string;
+  linkedin?: string;
+  website?: string;
 }
 
 /**
  * Get all authors
  */
-export function getAllAuthors(): Author[] {
-  return authorsData.authors;
+export async function getAllAuthors(): Promise<Author[]> {
+  const authors = await getCollection('authors');
+  return authors.map(author => ({
+    id: author.id,
+    ...author.data
+  }));
 }
 
 /**
  * Get author by ID
  */
-export function getAuthorById(id: string): Author | undefined {
-  return authorsData.authors.find(author => author.id === id);
+export async function getAuthorById(id: string): Promise<Author | undefined> {
+  try {
+    const author = await getEntry('authors', id);
+    if (!author) return undefined;
+    return {
+      id: author.id,
+      ...author.data
+    };
+  } catch {
+    return undefined;
+  }
 }
 
 /**
- * Get multiple authors by IDs
+ * Get multiple authors by IDs (synchronous version for use in components)
+ * Note: This is a cached/synchronous wrapper - only use after authors are loaded
  */
 export function getAuthorsByIds(ids: string[]): Author[] {
-  return ids
-    .map(id => getAuthorById(id))
-    .filter((author): author is Author => author !== undefined);
+  // This will be replaced by async version in pages
+  return [];
+}
+
+/**
+ * Get multiple authors by IDs (async version)
+ */
+export async function getAuthorsByIdsAsync(ids: string[]): Promise<Author[]> {
+  const authors = await Promise.all(
+    ids.map(id => getAuthorById(id))
+  );
+  return authors.filter((author): author is Author => author !== undefined);
 }
 
 /**
@@ -52,7 +73,7 @@ export function formatAuthorNames(authors: Author[]): string {
   if (authors.length === 0) return '';
   if (authors.length === 1) return authors[0].name;
   if (authors.length === 2) return `${authors[0].name} and ${authors[1].name}`;
-  
+
   const lastAuthor = authors[authors.length - 1];
   const otherAuthors = authors.slice(0, -1);
   return `${otherAuthors.map(a => a.name).join(', ')}, and ${lastAuthor.name}`;

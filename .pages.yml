@@ -8,50 +8,37 @@ media:
 content:
   - name: authors
     label: Authors
-    type: file
-    format: json
-    path: src/data/authors.json
+    type: collection
+    path: src/content/authors
     fields:
-      - name: authors
-        label: Authors
-        type: list
-        fields:
-          - name: id
-            label: ID (lowercase-with-dashes)
-            type: string
-            required: true
-          - name: name
-            label: Full Name
-            type: string
-            required: true
-          - name: bio
-            label: Bio
-            type: string
-            required: false
-          - name: avatar
-            label: Avatar Image
-            type: image
-            required: false
-          - name: email
-            label: Email
-            type: string
-            required: false
-          - name: social
-            label: Social Links
-            type: object
-            fields:
-              - name: twitter
-                label: Twitter URL
-                type: string
-                required: false
-              - name: linkedin
-                label: LinkedIn URL
-                type: string
-                required: false
-              - name: website
-                label: Website URL
-                type: string
-                required: false
+      - name: name
+        label: Full Name
+        type: string
+        required: true
+      - name: bio
+        label: Bio
+        type: string
+        required: false
+      - name: avatar
+        label: Avatar Image
+        type: image
+        required: false
+      - name: email
+        label: Email
+        type: string
+        required: false
+      - name: twitter
+        label: Twitter URL
+        type: string
+        required: false
+      - name: linkedin
+        label: LinkedIn URL
+        type: string
+        required: false
+      - name: website
+        label: Website URL
+        type: string
+        required: false
 
   - name: site_config
     label: Site Configuration

@@ -56,16 +56,22 @@ Configured in `tsconfig.json`:
 - Global site configuration in `src/config/siteConfig.ts`
 - SEO component at `src/components/BaseHead.astro` handles meta tags, Open Graph, and Twitter cards
 - Image URLs are automatically encoded to handle spaces and special characters in filenames
-- MainLayout (`src/layouts/MainLayout.astro`) accepts props: `title`, `description`, `canonical`, `image`, `imageAlt`, `type`, `noindex`, `authors`
+- MainLayout (`src/layouts/MainLayout.astro`) accepts props: `title`, `description`, `canonical`, `image`, `imageAlt`, `type`, `noindex`, `authors`, `pubDate`
+- For article pages, `pubDate` is used to add `article:published_time` meta tag for SEO
 
 ### Authors System
 
-Authors are managed through a data file (`src/data/authors.json`) and can be edited via Pages CMS:
+Authors are managed as an **Astro content collection** and can be edited via Pages CMS:
 
-- Authors data structure includes: `id`, `name`, `bio`, `avatar`, `email`, and `social` links
-- Blog posts reference authors by their `id` (comma-separated for multiple authors)
-- Author utilities in `src/utils/authors.ts` provide helper functions for loading and formatting author data
-- **Blog posts only** (not pages) can have authors - appears in SEO meta tags and displays author bio section
+- Authors are stored in `src/content/authors/` as markdown files (filename becomes the author ID)
+- Author schema includes: `name`, `bio`, `avatar`, `email`, `twitter`, `linkedin`, `website` (all social links are at root level, not nested)
+- Blog posts reference authors by their `id` (filename without extension, comma-separated for multiple authors)
+- Author utilities in `src/utils/authors.ts` provide async functions for loading and formatting author data
+- **Author Taxonomy Pages**:
+  - `/authors` - Lists all authors with post counts
+  - `/authors/[id]` - Individual author page showing bio and all their articles
+- **Blog posts only** (not pages) can have authors - appears in SEO meta tags and displays author bio section with links to author pages
+- The legacy `src/data/authors.json` file can be removed once migration is confirmed
 
 ### Content Collections
 
@@ -77,6 +83,16 @@ Blog collection schema (`src/content/config.ts`):
 - `featured_image: string` (optional)
 - `authors: string | string[]` (optional) - Comma-separated author IDs, automatically parsed to arrays
 - `tags: string | string[]` (optional) - Comma-separated tags, automatically parsed to arrays
+
+Authors collection schema (`src/content/config.ts`):
+
+- `name: string` (required)
+- `bio: string` (optional)
+- `avatar: string` (optional)
+- `email: string` (optional)
+- `twitter: string` (optional)
+- `linkedin: string` (optional)
+- `website: string` (optional)
 
 ### Deployment
 

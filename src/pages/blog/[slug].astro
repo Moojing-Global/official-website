@@ -1,7 +1,7 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
-import { getAuthorsByIds, formatAuthorNames } from "../../utils/authors";
+import { getAuthorsByIdsAsync, formatAuthorNames } from "../../utils/authors";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
@@ -19,12 +19,13 @@ const description = post.data.description;
 const canonical = `/blog/${post.slug}`;
 const image = post.data.featured_image;
 const type = "article";
+const pubDate = post.data.pubDate;
 
 // Load authors from the post data
-const authors = post.data.authors ? getAuthorsByIds(post.data.authors) : [];
+const authors = post.data.authors ? await getAuthorsByIdsAsync(post.data.authors) : [];
 ---
 
-<MainLayout {title} {description} {canonical} {image} {type} {authors}>
+<MainLayout {title} {description} {canonical} {image} {type} {authors} {pubDate}>
     <article>
         <h1>{post.data.title}</h1>
         
@@ -54,24 +55,31 @@ const authors = post.data.authors ? getAuthorsByIds(post.data.authors) : [];
                 {authors.map(author => (
                     <div class="author-bio">
                         {author.avatar && (
-                            <img src={author.avatar} alt={author.name} class="author-avatar" />
+                            <a href={`/authors/${author.id}`}>
+                                <img src={author.avatar} alt={author.name} class="author-avatar" />
+                            </a>
                         )}
                         <div class="author-info">
-                            <h3>{author.name}</h3>
+                            <h3>
+                                <a href={`/authors/${author.id}`}>{author.name}</a>
+                            </h3>
                             {author.bio && <p>{author.bio}</p>}
-                            {author.social && (
-                                <div class="author-social">
-                                    {author.social.website && (
-                                        <a href={author.social.website} target="_blank" rel="noopener noreferrer">Website</a>
-                                    )}
-                                    {author.social.twitter && (
-                                        <a href={author.social.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>
-                                    )}
-                                    {author.social.linkedin && (
-                                        <a href={author.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                                    )}
-                                </div>
-                            )}
+                            <div class="author-links">
+                                <a href={`/authors/${author.id}`}>View all articles</a>
+                                {(author.website || author.twitter || author.linkedin) && (
+                                    <div class="author-social">
+                                        {author.website && (
+                                            <a href={author.website} target="_blank" rel="noopener noreferrer">Website</a>
+                                        )}
+                                        {author.twitter && (
+                                            <a href={author.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>
+                                        )}
+                                        {author.linkedin && (
+                                            <a href={author.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                 ))}
