@@ -1,12 +1,7 @@
 ---
 title: This is an article title sample
-date: 2025-10-28
-description: This is a meta Description. Lorem Ipsum. incididunt velit amet
-  labore ipsum elit pariatur non incididunt quis eiusmod nostrud dolore proident
-  et eu ipsum irure adipisicing consectetur
-tags: |-
-  e-commerce
-  energy drinks
+pubDate: 2025-10-28
+description: This is a meta Description. Lorem Ipsum. incididunt velit amet labore ipsum elit pariatur non incididunt quis eiusmod nostrud dolore proident et eu ipsum irure adipisicing consectetur
 ---
 ### Lorem Ipsum Dolor Sit Amet
 
