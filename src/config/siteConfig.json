@@ -1,0 +1,15 @@
+{
+  "name": "My Astro Website",
+  "url": "https://www.example.com",
+  "title": "My Astro Website",
+  "description": "Welcome to my new Astro site!",
+  "author": "Your Name",
+  "ogImage": {
+    "src": "/og-image.jpg",
+    "alt": "My Astro Website"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/yourpage",
+    "linkedin": "https://www.linkedin.com/company/yourcompany"
+  }
+}

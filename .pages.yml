@@ -5,6 +5,56 @@ media:
     output: /media
     path: /media
 
+data:
+  - name: site_config
+    label: Site Configuration
+    file: src/config/siteConfig.json
+    fields:
+      - name: name
+        label: Site Name
+        type: string
+        required: true
+      - name: url
+        label: Site URL
+        type: string
+        required: true
+      - name: title
+        label: Default SEO Title
+        type: string
+        required: true
+      - name: description
+        label: Default SEO Description
+        type: string
+        required: true
+      - name: author
+        label: Author Name
+        type: string
+        required: true
+      - name: ogImage
+        label: Open Graph Image
+        type: object
+        fields:
+          - name: src
+            label: Image Path
+            type: string
+            required: true
+          - name: alt
+            label: Image Alt Text
+            type: string
+            required: true
+      - name: social
+        label: Social Media Links
+        type: object
+        fields:
+          - name: facebook
+            label: Facebook URL
+            type: string
+            required: false
+          - name: linkedin
+            label: LinkedIn URL
+            type: string
+            required: false
+
 content:
   - name: blog
     label: Blog Posts
