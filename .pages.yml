@@ -4,8 +4,8 @@ media:
     input: src/media
     output: /media
     path: /media
-
-content:
+    
+media:
   - name: resources
     label: Resources
     type: file
