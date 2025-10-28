@@ -1,13 +1,11 @@
 ---
-title: "18 Months Being a Marketing Manager"
-date: 2024-01-21
-image: "_849f8a7804f610c2b698ae65558dd777_MD5.jpg"
-description: "Reflections on leading a small but impactful marketing team for 18 months. This article explores the multifaceted role of marketing beyond its stereotypes and how it shapes both external and internal perceptions."
-tags: ['marketing', 'leadership', 'career']
-authors: ['jotham']
+title: 18 Months Being a Marketing Manager
+description: Reflections on leading a small but impactful marketing team for 18
+  months. This article explores the multifaceted role of marketing beyond its
+  stereotypes and how it shapes both external and internal perceptions.
+tags: marketing, leadership, career
 ---
-
-![test](./_849f8a7804f610c2b698ae65558dd777_MD5.jpg)
+![](/media/_849f8a7804f610c2b698ae65558dd777_MD5.jpg)
 
 I lead a small team of three. Though small, this department is an important one and has an undeniable impact on the company and the industry.
 
@@ -21,7 +19,7 @@ Now, I realise that marketing exists outside the realm of morality. It is merely
 
 How people outside the company view us, and how the company views itself heavily depends on the work we do. Being in this position for 18 months, maybe it’s not so bad after all.
 
----
+* * *
 
 I thought only people in their early/mid-thirties get to be heads of departments. To be in this position at this age is something I’m grateful for. I had assumed that my “leadership” glory days were behind me a decade ago—holding top positions within youth organisations and clubs.
 
@@ -33,10 +31,14 @@ Being in charge of a club is prestigious, but it also feels like having dirty la
 
 Hence, the past decade of being a solo worker has been liberating. I was a writer, journalist, and a solo freelancer—videographer, editor and producer all in one.
 
-- I don’t have to seek permission to start or change anything.
-- I can move fast and efficiently without shackles holding me down.
-- I am accountable to only my client, employers and only myself.
-- I’m the one being mentored rather than doing the mentoring.
+*   I don’t have to seek permission to start or change anything.
+    
+*   I can move fast and efficiently without shackles holding me down.
+    
+*   I am accountable to only my client, employers and only myself.
+    
+*   I’m the one being mentored rather than doing the mentoring.
+    
 
 But things have changed. I’ve had bosses who took good care of me. They fought for my salary, taught me everything I knew, and shouldered blame even though it was clearly my fault.
 
@@ -66,10 +68,14 @@ Fearless employees take ownership of their work—and their language reflects th
 
 Building a fearless department is surprisingly simple, but it wasn’t easy.
 
-- It requires **establishing clear expectations**. This means giving the team explicit authority to make specific calls, where they are allowed to make mistakes, and where there can’t be compromises.
-- It requires **having their backs**. If other people have problems with my department’s performance or how they work, all complaints should go to me. Fault and responsibility lie on the department head, even if it’s the individual’s fault.
-- It requires **demonstration**. Fear is the default state, and fearlessness needs to be trained. New recruits need to see the seniors correcting my mistakes and making fun of my insecurities without getting punished. The team needs to see me go toe-to-toe with upper management and defend what I believe is right.
-- Most importantly, it requires **caring about who they are and what they believe in**. Fearlessness is layered on top of trust, which can only be built through deep empathy and spending consistent, quality time together.
+*   It requires **establishing clear expectations**. This means giving the team explicit authority to make specific calls, where they are allowed to make mistakes, and where there can’t be compromises.
+    
+*   It requires **having their backs**. If other people have problems with my department’s performance or how they work, all complaints should go to me. Fault and responsibility lie on the department head, even if it’s the individual’s fault.
+    
+*   It requires **demonstration**. Fear is the default state, and fearlessness needs to be trained. New recruits need to see the seniors correcting my mistakes and making fun of my insecurities without getting punished. The team needs to see me go toe-to-toe with upper management and defend what I believe is right.
+    
+*   Most importantly, it requires **caring about who they are and what they believe in**. Fearlessness is layered on top of trust, which can only be built through deep empathy and spending consistent, quality time together.
+    
 
 However, managers can merely facilitate the cultivation of a fearless department. It is ultimately a process we have little control over—because it heavily depends on the personalities, convictions and capabilities of those in it. My department has had other staff members that did not jive with the philosophy and eventually left.
 
@@ -93,9 +99,12 @@ Let’s start with informational systems because it’s fundamental to many inte
 
 I noticed that a lot of unnecessary anger and frustration comes from information retrieval:
 
-- “Hey, can you send me this PDF by today?”
-- “Who is our partner for this project again?”
-- “How many leads have we captured within this month?”
+*   “Hey, can you send me this PDF by today?”
+    
+*   “Who is our partner for this project again?”
+    
+*   “How many leads have we captured within this month?”
+    
 
 Even worse is the way these questions are asked. Most are via instant messaging rather than email, implying urgency and interrupting people when they are “in the zone”.
 
@@ -149,9 +158,12 @@ While great for brainstorming, it’s almost always used when someone gives a ne
 
 It’s not company-specific, either. It persists everywhere, from high school event planning and college assignment groups to boardroom meetings.
 
-- **It gives the illusion of contribution.** Many people feel smug after offering suggestions. They don’t realise that opinions are just doors to possible solutions, not a replacement for strategy and work distribution.
-- **It is lazy.** It is easy to offer opinions without context on the subject matter. Problem-solvers know that available options get increasingly narrower the more they understand the scope of the problem. Offering unfounded opinions just makes you look dumb at best and invalidates the actual hard work problem-solvers have committed to at worse.
-- **It is manipulative.** It is a risk-free, win-win scenario for the person offering their opinions. If their opinion doesn’t work out, it is “our” problem or the execution sucks. But if it does work out, their ideas are validated, and they can take the credit. In their minds, offering suggestions is always a good look.
+*   **It gives the illusion of contribution.** Many people feel smug after offering suggestions. They don’t realise that opinions are just doors to possible solutions, not a replacement for strategy and work distribution.
+    
+*   **It is lazy.** It is easy to offer opinions without context on the subject matter. Problem-solvers know that available options get increasingly narrower the more they understand the scope of the problem. Offering unfounded opinions just makes you look dumb at best and invalidates the actual hard work problem-solvers have committed to at worse.
+    
+*   **It is manipulative.** It is a risk-free, win-win scenario for the person offering their opinions. If their opinion doesn’t work out, it is “our” problem or the execution sucks. But if it does work out, their ideas are validated, and they can take the credit. In their minds, offering suggestions is always a good look.
+    
 
 The worst part? Offering unsolicited suggestions mid-way stalls an entire discussion, forcing conversations into a tangent that will most likely go nowhere. The conclusion is either “we will revisit this next time”, or topics move on entirely without a conclusion.
 
@@ -173,17 +185,23 @@ While this philosophy has worked well for me as a solo worker, moving into a per
 
 Being a manager opened my eyes to the theoretical side of **politics in the workplace** —and not in a bad way. More specifically, it’s the interesting interplay between management and politics:
 
-- Politics WILL exist when multiple parties need to make a collective decision—be it discussing where to have dinner with your spouse or a team discussion on the date of an exhibition event. There is never an “absence” of politics. Like rules, it is always there. Companies can only decide if they want to make it transparent and manageable. With uncontrolled politics, the boundaries are never clear, nobody wants to make a decision, and initiatives are left to fate.
-- Proper management NEEDS politics to function because politics is the ever-changing ebb and flow of power—power that is needed to push initiatives forward. That’s because projects and solutions need an endorsement to turn from a plan into a reality. A variation of “I’ll support your initiative if you support mine” always exists implicitly or explicitly. Such is a fundamental pillar of management.
-- Conversely, politics NEED proper management to be facilitated. Bureaucracy may sound horrible, but the lack of it is even worse. That’s because bureaucracy is the vaults that control the ebb and flow of power. Meeting minutes and agendas are an example of that. Bureaucracy also separates the people problem from the systems problem. With bureaucracy, getting items approved is no longer about currying favours from individuals, but a side quest involving obtaining the necessary signatures from well-defined parties.
+*   Politics WILL exist when multiple parties need to make a collective decision—be it discussing where to have dinner with your spouse or a team discussion on the date of an exhibition event. There is never an “absence” of politics. Like rules, it is always there. Companies can only decide if they want to make it transparent and manageable. With uncontrolled politics, the boundaries are never clear, nobody wants to make a decision, and initiatives are left to fate.
+    
+*   Proper management NEEDS politics to function because politics is the ever-changing ebb and flow of power—power that is needed to push initiatives forward. That’s because projects and solutions need an endorsement to turn from a plan into a reality. A variation of “I’ll support your initiative if you support mine” always exists implicitly or explicitly. Such is a fundamental pillar of management.
+    
+*   Conversely, politics NEED proper management to be facilitated. Bureaucracy may sound horrible, but the lack of it is even worse. That’s because bureaucracy is the vaults that control the ebb and flow of power. Meeting minutes and agendas are an example of that. Bureaucracy also separates the people problem from the systems problem. With bureaucracy, getting items approved is no longer about currying favours from individuals, but a side quest involving obtaining the necessary signatures from well-defined parties.
+    
 
 Frankly, during my early months, I have been focusing too much on management that I neglected the importance of gathering political power. This sound like Little Finger from Game of Thrones, but hear me out.
 
 How does one “gain” political power? The keyword: **capital** …or leverage. They mean the same thing.
 
-- You can have **financial capital**. People have no choice but to listen to you because you outright own a part of the company.
-- You could also have **knowledge capital**, gaining authority because you know things that others do not—be it internal affairs, partner relations and so on.
-- Your powerbase can come from **social capital**, where you’ve spent years building friendships and garnering favours with others.
+*   You can have **financial capital**. People have no choice but to listen to you because you outright own a part of the company.
+    
+*   You could also have **knowledge capital**, gaining authority because you know things that others do not—be it internal affairs, partner relations and so on.
+    
+*   Your powerbase can come from **social capital**, where you’ve spent years building friendships and garnering favours with others.
+    
 
 For me, I’ve primarily relied on **career capital**: the ability to get things done. Although most people want meritocracy, being capable alone does not give someone the necessary strength to make an impact. That’s why useless politicians still get elected, and there’s nothing we can do about it.
 
@@ -203,7 +221,7 @@ To me, that’s called not putting your skin into the game; Skin needed to imple
 
 To not use them is choosing to live under undesirable circumstances rather than doing undesirable work to fix them. One requires payment out of one’s own pocket—risking effort, goodwill and reputation. The other only requires collective tolerance, a tax collected from others.
 
----
+* * *
 
 This pretty much summarises my key learnings as a manager. If I am capable, perhaps I should reflect on my time as a journalist and write a similar piece as well.
 
