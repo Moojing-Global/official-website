@@ -10,8 +10,15 @@ content:
     label: Resources
     type: file
     options:
-      path: downloads
+      path: src/content/downloads
       extensions: [pdf]
+        fields:
+      - name: title
+        label: Title
+        type: string
+      - name: date
+        label: Publication Date
+        type: date
 
 content:
   - name: blog
