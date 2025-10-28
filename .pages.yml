@@ -1,7 +1,7 @@
 media:
   - name: media
     label: Media
-    input: src/media
+    input: public/media
     output: /media
     path: /media
 
@@ -28,11 +28,9 @@ content:
         type: image
         required: false
       - name: tags
-        label: Tags
-        type: list
+        label: Tags (comma-separated)
+        type: string
         required: false
-        items:
-          type: string
       - name: body
         label: Body
         type: rich-text

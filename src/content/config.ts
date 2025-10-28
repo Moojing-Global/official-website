@@ -6,8 +6,13 @@ const blog = defineCollection({
     title: z.string(),
     pubDate: z.date(),
     description: z.string().optional(),
-    featured_image: z.string().optional(),
-    tags: z.array(z.string()).optional(),
+    tags: z.union([
+      z.array(z.string()),
+      z.string()
+    ]).transform((val) => {
+      if (Array.isArray(val)) return val;
+      return val.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0);
+    }).optional(),
   }),
 });
 
