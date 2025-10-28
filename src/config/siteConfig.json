@@ -5,7 +5,7 @@
   "description": "Welcome to my new Astro site!",
   "author": "Your Name",
   "ogImage": {
-    "src": "/og-image.jpg",
+    "src": "/media/optimised_image.webp",
     "alt": "My Astro Website"
   },
   "social": {
