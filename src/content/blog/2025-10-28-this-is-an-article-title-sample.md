@@ -95,9 +95,13 @@ This is `inline code` in a sentence.
 
 ## Links and Images
 
-[Lorem Ipsum Generator](https://www.lipsum.com/)
+**_Big Image:_**
 
-* * *
+![](/media/Big_image.jpg)
+
+**_Optimised image:_**
+
+![](/media/optimised_image.webp)
 
 ## Blockquotes
 
@@ -113,7 +117,8 @@ This is `inline code` in a sentence.
 
 ## Code Blocks
 
-### JavaScript  
+### JavaScript
+
 Python
 
 ### Plain Text
