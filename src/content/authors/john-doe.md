@@ -1,7 +1,7 @@
 ---
 name: John Doe
 bio: Tech writer and developer
-avatar: /media/avatar-placeholder.jpg
+avatar: /media/authors/Profile_avatar_placeholder_large.png
 email: john@example.com
 twitter: https://twitter.com/johndoe
 linkedin: https://linkedin.com/in/johndoe
