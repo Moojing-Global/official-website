@@ -1,22 +1,75 @@
 ---
-import Favicon from "../assets/Favicon.astro";
+import Favicon from "./Favicon.astro";
+import { siteConfig } from "../config/siteConfig";
 
-const { title = "My Astro Website", ...props } = Astro.props;
+export interface Props {
+    title?: string;
+    description?: string;
+    canonical?: string;
+    image?: string;
+    imageAlt?: string;
+    type?: "website" | "article";
+    noindex?: boolean;
+}
+
+const {
+    title = siteConfig.title,
+    description = siteConfig.description,
+    canonical,
+    image = siteConfig.ogImage.src,
+    imageAlt = siteConfig.ogImage.alt,
+    type = "website",
+    noindex = false,
+} = Astro.props;
+
+// Construct full title with site name
+const fullTitle =
+    title === siteConfig.title ? title : `${title} | ${siteConfig.name}`;
+
+// Construct full URLs for canonical and image
+const canonicalURL = canonical
+    ? new URL(canonical, siteConfig.url).href
+    : undefined;
+const imageURL = new URL(image, siteConfig.url).href;
+
+// Get current page URL for og:url
+const currentURL =
+    canonicalURL || new URL(Astro.url.pathname, siteConfig.url).href;
 ---
 
 <link rel="sitemap" href="/sitemap-index.xml" />
-<title>{title}</title>
-<meta name="description" content="Welcome to my new Astro site!" />
 
-<!-- Open Graph tags -->
-<meta property="og:title" content="My New Astro Website" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://www.example.com/" />
-<meta property="og:description" content="Welcome to my new Astro site!" />
-<meta
-  property="og:image"
-  content="https://www.example.com/_astro/seo-banner.BZD7kegZ.webp"
-/>
-<meta property="og:image:alt" content="" />
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Canonical URL -->
+{canonicalURL && <link rel="canonical" href={canonicalURL} />}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={currentURL} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageURL} />
+<meta property="og:image:alt" content={imageAlt} />
+<meta property="og:site_name" content={siteConfig.name} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={currentURL} />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageURL} />
+<meta name="twitter:image:alt" content={imageAlt} />
+
+<!-- Article Author (for LinkedIn) -->
+{
+    type === "article" && siteConfig.author && (
+        <meta name="author" content={siteConfig.author} />
+    )
+}
 
 <Favicon />

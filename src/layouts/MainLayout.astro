@@ -1,15 +1,40 @@
 ---
 import Head from "@components/head.astro";
-const { ...props } = Astro.props;
+import "../styles/global.css";
+
+export interface Props {
+    title?: string;
+    description?: string;
+    canonical?: string;
+    image?: string;
+    imageAlt?: string;
+    type?: "website" | "article";
+    noindex?: boolean;
+}
+
+// Extract SEO props from frontmatter
+const { title, description, canonical, image, imageAlt, type, noindex } =
+    Astro.props;
+
+const seoProps = {
+    title,
+    description,
+    canonical,
+    image,
+    imageAlt,
+    type,
+    noindex,
+};
 ---
 
-<html>
+<!doctype html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
-        <Head />
-        <!-- Additional head elements -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Head {...seoProps} />
     </head>
     <body>
-        <!-- Page content goes here -->
+        <slot />
     </body>
 </html>

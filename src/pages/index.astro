@@ -2,13 +2,19 @@
 import Head from "@components/head.astro";
 import "../styles/global.css";
 import { Icon } from "astro-icon/components";
+
+const seo = {
+    title: "Coming Soon",
+    description: "Our website is coming soon. Stay tuned for updates!",
+    canonical: "/",
+};
 ---
 
 <html lang="en">
-    <Head />
+    <Head {...seo} />
     <body>
         <div class="flex place-items-center text-5xl">
-            <h1 class="font-black">Astro</h1>
+            <h1 class="font-black">Coming Soon</h1>
             <Icon name="tabler:accessible" class="text-red-400" />
         </div>
     </body>
