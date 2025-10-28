@@ -5,10 +5,12 @@ media:
     output: /media
     path: /media
 
-data:
+content:
   - name: site_config
     label: Site Configuration
-    file: src/config/siteConfig.json
+    type: file
+    format: json
+    path: src/config/siteConfig.json
     fields:
       - name: name
         label: Site Name
@@ -55,7 +57,6 @@ data:
             type: string
             required: false
 
-content:
   - name: blog
     label: Blog Posts
     type: collection

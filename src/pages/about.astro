@@ -1,9 +1,9 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 
-// SEO defined in frontmatter - these get passed to MainLayout automatically
 const title = "About Us";
-const description = "Learn more about our company, mission, and the team behind our success.";
+const description =
+    "Learn more about our company, mission, and the team behind our success.";
 const canonical = "/about";
 ---
 
@@ -11,6 +11,9 @@ const canonical = "/about";
     <main>
         <h1>About Us</h1>
         <p>This is an example page demonstrating frontmatter SEO.</p>
-        <p>The SEO meta tags are defined in the frontmatter above and automatically passed to MainLayout.</p>
+        <p>
+            The SEO meta tags are defined in the frontmatter above and
+            automatically passed to MainLayout.
+        </p>
     </main>
 </MainLayout>

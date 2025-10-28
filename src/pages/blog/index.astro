@@ -1,5 +1,10 @@
 ---
+import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
+
+const title = "Blog";
+const description = "Read our latest blog posts and articles.";
+const canonical = "/blog";
 
 const posts = await getCollection("blog");
 const sortedPosts = posts.sort(
@@ -8,11 +13,8 @@ const sortedPosts = posts.sort(
 );
 ---
 
-<html>
-    <head>
-        <title>Blog</title>
-    </head>
-    <body>
+<MainLayout {title} {description} {canonical}>
+    <main>
         <h1>Blog Posts</h1>
         <ul>
             {
@@ -31,5 +33,5 @@ const sortedPosts = posts.sort(
                 ))
             }
         </ul>
-    </body>
-</html>
+    </main>
+</MainLayout>

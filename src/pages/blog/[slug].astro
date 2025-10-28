@@ -1,4 +1,5 @@
 ---
+import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -11,28 +12,28 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+const title = post.data.title;
+const description = post.data.description;
+const canonical = `/blog/${post.slug}`;
+const image = post.data.featured_image;
+const type = "article";
 ---
 
-<html>
-    <head>
-        <title>{post.data.title}</title>
-        <meta name="description" content={post.data.description} />
-    </head>
-    <body>
-        <article>
-            <h1>{post.data.title}</h1>
-            <time>{post.data.pubDate.toLocaleDateString()}</time>
+<MainLayout {title} {description} {canonical} {image} {type}>
+    <article>
+        <h1>{post.data.title}</h1>
+        <time>{post.data.pubDate.toLocaleDateString()}</time>
 
-            {
-                post.data.tags && (
-                    <div>
-                        {post.data.tags.map((tag) => (
-                            <span class="tag">{tag}</span>
-                        ))}
-                    </div>
-                )
-            }
-            <Content />
-        </article>
-    </body>
-</html>
+        {
+            post.data.tags && (
+                <div>
+                    {post.data.tags.map((tag) => (
+                        <span class="tag">{tag}</span>
+                    ))}
+                </div>
+            )
+        }
+        <Content />
+    </article>
+</MainLayout>
