@@ -5,20 +5,21 @@ media:
     output: /media
     path: /media
     
-media:
   - name: resources
     label: Resources
     type: file
-    options:
-      path: src/content/downloads
-      extensions: [pdf]
-        fields:
+    input: src/content/downloads
+    output: /downloads
+    path: /downloads
+    extensions: [pdf]
+    fields:
       - name: title
         label: Title
         type: string
       - name: date
         label: Publication Date
         type: date
+
 
 content:
   - name: blog
