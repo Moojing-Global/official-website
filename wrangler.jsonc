@@ -1,16 +1,16 @@
 {
-	"main": "dist/_worker.js/index.js",
-	"name": "moojing_v1",
+  "main": "dist/_worker.js/index.js",
+  "name": "moojing_v1",
   "compatibility_date": "2025-10-28",
-  "compatibility_flags": [
-    "nodejs_compat",
-    "global_fetch_strictly_public"
-  ],
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "./dist"
-	},
-	"observability": {
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "observability": {
     "enabled": true
+  },
+  "build": {
+    "command": "bun config set optional true && bun ci && bun run build"
   }
 }
