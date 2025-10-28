@@ -5,6 +5,7 @@ description: This is a meta Description. Lorem Ipsum. incididunt velit amet
   labore ipsum elit pariatur non incididunt quis eiusmod nostrud dolore proident
   et eu ipsum irure adipisicing consectetur
 featured_image: /media/Big_image.jpg
+tags: Energy Drinks, shopee
 ---
 ### Lorem Ipsum Dolor Sit Amet
 
