@@ -30,7 +30,14 @@ const fullTitle =
 const canonicalURL = canonical
     ? new URL(canonical, siteConfig.url).href
     : undefined;
-const imageURL = new URL(image, siteConfig.url).href;
+
+// Properly encode the image path to handle spaces and special characters
+// Split the path and encode each segment, then reconstruct
+const encodedImagePath = image
+    .split('/')
+    .map(segment => encodeURIComponent(segment))
+    .join('/');
+const imageURL = new URL(encodedImagePath, siteConfig.url).href;
 
 // Get current page URL for og:url
 const currentURL =
