@@ -12,6 +12,8 @@ content:
     options:
       path: downloads
       extensions: [pdf]
+
+content:
   - name: blog
     label: Blog Posts
     type: collection
