@@ -14,12 +14,15 @@ content:
       - name: title
         label: Title
         type: string
-      - name: pubDate
+      - name: date
         label: Publication Date
         type: date
       - name: description
         label: Description
         type: string
+      - name: featured_image
+        label: Featured Image
+        type: image
       - name: tags
         label: Tags
         type: list
