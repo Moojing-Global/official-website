@@ -1,6 +1,5 @@
 ---
 import BaseHead from "@components/BaseHead.astro";
-import type { Author } from "../utils/authors";
 import "../styles/global.css";
 import "@tailwindplus/elements";
 
@@ -12,7 +11,7 @@ export interface Props {
     imageAlt?: string;
     type?: "website" | "article";
     noindex?: boolean;
-    authors?: Author[];
+    author?: string;
     pubDate?: Date;
 }
 ---

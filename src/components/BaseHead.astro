@@ -1,7 +1,6 @@
 ---
 import Favicon from "./Favicon.astro";
 import { siteConfig } from "../config/siteConfig";
-import type { Author } from "../utils/authors";
 
 export interface Props {
     title?: string;
@@ -11,7 +10,7 @@ export interface Props {
     imageAlt?: string;
     type?: "website" | "article";
     noindex?: boolean;
-    authors?: Author[];
+    author?: string;
     pubDate?: Date;
 }
 
@@ -23,7 +22,7 @@ const {
     imageAlt = siteConfig.ogImage.alt,
     type = "website",
     noindex = false,
-    authors = [],
+    author,
     pubDate,
 } = Astro.props;
 
@@ -77,20 +76,12 @@ const currentURL =
 <meta name="twitter:image" content={imageURL} />
 <meta name="twitter:image:alt" content={imageAlt} />
 
-<!-- Article Author (for LinkedIn and SEO) -->
-{
-    type === "article" && authors.length > 0 && (
-        <meta name="author" content={authors.map((a) => a.name).join(", ")} />
-    )
-}
-
 <!-- Article Author and Published Time (for better SEO) -->
 {
-    type === "article" && authors.length > 0 && (
+    type === "article" && author && (
         <>
-            {authors.map((author) => (
-                <meta property="article:author" content={author.name} />
-            ))}
+            <meta name="author" content={author} />
+            <meta property="article:author" content={author} />
         </>
     )
 }

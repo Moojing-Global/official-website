@@ -20,11 +20,9 @@ content:
         label: Featured Image
         type: image
         required: false
-      - name: authors
-        label: Authors
-        type: select
-        multiple: true
-        options: content:authors
+      - name: author
+        label: Author Name
+        type: string
         required: false
       - name: tags
         label: Tags (comma-separated)
@@ -34,40 +32,6 @@ content:
         label: Body
         type: rich-text
         required: true
-
-  - name: authors
-    label: Authors
-    type: collection
-    path: src/content/authors
-    fields:
-      - name: name
-        label: Full Name
-        type: string
-        required: true
-      - name: bio
-        label: Bio
-        type: string
-        required: false
-      - name: avatar
-        label: Avatar Image
-        type: image
-        required: false
-      - name: email
-        label: Email
-        type: string
-        required: false
-      - name: twitter
-        label: Twitter URL
-        type: string
-        required: false
-      - name: linkedin
-        label: LinkedIn URL
-        type: string
-        required: false
-      - name: website
-        label: Website URL
-        type: string
-        required: false
 
   - name: site_config
     label: Site Configuration

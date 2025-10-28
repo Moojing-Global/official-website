@@ -2,6 +2,25 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Project Status
+
+This is an **early-stage MVP** for a B2B tech company website with blogging capabilities. The codebase is lean and optimized for future expansion.
+
+**Current State:**
+- ✅ Astro v5 + TypeScript + Tailwind CSS v4 foundation
+- ✅ Blog with content collections and Pages CMS integration
+- ✅ SEO meta tags and structured data (article schema)
+- ✅ Cloudflare Pages deployment configuration
+- ⚠️ Homepage is "Coming Soon" placeholder
+- ⚠️ Minimal components (no header, footer, navigation)
+- ⚠️ Static images only (no optimization)
+
+**Key Metrics:**
+- Build time: ~1.25s
+- TypeScript errors: 0
+- Source files: ~14
+- Code lines: ~327
+
 ## Development Commands
 
 All commands use `bun` as the package manager:
@@ -25,24 +44,16 @@ The project uses **Pages CMS** (configured via `.pages.yml`) for content editing
 - Content schema is defined in both `src/content/config.ts` (Astro) and `.pages.yml` (Pages CMS)
 - Tags can be entered as comma-separated strings in Pages CMS and are automatically parsed to arrays
 
-### Image Handling Architecture
+### Image Handling
 
-The project has a **dual-path image system** to support both Astro's native optimization and Pages CMS workflow:
+The project uses a **simple static image approach**:
 
-1. **Pages CMS uploads to**: `public/media/` (static files, served at `/media/` URL)
-2. **Astro processes from**: `src/media/` (for build-time optimization)
+- **Pages CMS uploads to**: `public/media/` (static files, served at `/media/` URL)
+- Images are referenced directly in markdown content and frontmatter using `/media/` paths
+- No build-time image optimization currently implemented
+- Images are served as-is from the static public directory
 
-**Key utilities** (in `src/utils/`):
-
-- `imageLoader.ts` - Loads images from `src/media/` using Vite's import.meta.glob for Astro Image optimization
-- `remarkMediaImages.ts` - Remark plugin that transforms `/media/` paths to Vite's `/@fs/` paths for markdown processing
-- `rehypeOptimizeImages.ts` - Rehype plugin that adds lazy loading and async decoding to img tags
-
-**Migration script**:
-
-- `scripts/copy-media.js` - Copies files from `src/media/` to `public/media/` (for backward compatibility)
-
-**MarkdownImage component** (`src/components/MarkdownImage.astro`) - Use this component to render optimized images from markdown frontmatter paths.
+**Note:** Image optimization utilities (lazy loading, responsive images, WebP conversion) are not yet implemented but are planned for future enhancement.
 
 ### TypeScript Path Aliases
 
@@ -56,22 +67,10 @@ Configured in `tsconfig.json`:
 - Global site configuration in `src/config/siteConfig.ts`
 - SEO component at `src/components/BaseHead.astro` handles meta tags, Open Graph, and Twitter cards
 - Image URLs are automatically encoded to handle spaces and special characters in filenames
-- MainLayout (`src/layouts/MainLayout.astro`) accepts props: `title`, `description`, `canonical`, `image`, `imageAlt`, `type`, `noindex`, `authors`, `pubDate`
-- For article pages, `pubDate` is used to add `article:published_time` meta tag for SEO
-
-### Authors System
-
-Authors are managed as an **Astro content collection** and can be edited via Pages CMS:
-
-- Authors are stored in `src/content/authors/` as markdown files (filename becomes the author ID)
-- Author schema includes: `name`, `bio`, `avatar`, `email`, `twitter`, `linkedin`, `website` (all social links are at root level, not nested)
-- Blog posts reference authors by their `id` (filename without extension, comma-separated for multiple authors)
-- Author utilities in `src/utils/authors.ts` provide async functions for loading and formatting author data
-- **Author Taxonomy Pages**:
-  - `/authors` - Lists all authors with post counts
-  - `/authors/[id]` - Individual author page showing bio and all their articles
-- **Blog posts only** (not pages) can have authors - appears in SEO meta tags and displays author bio section with links to author pages
-- The legacy `src/data/authors.json` file can be removed once migration is confirmed
+- MainLayout (`src/layouts/MainLayout.astro`) accepts props: `title`, `description`, `canonical`, `image`, `imageAlt`, `type`, `noindex`, `author`, `pubDate`
+- For article pages:
+  - `author` (string) is used to add `author` and `article:author` meta tags for SEO
+  - `pubDate` is used to add `article:published_time` meta tag for SEO
 
 ### Content Collections
 
@@ -81,18 +80,8 @@ Blog collection schema (`src/content/config.ts`):
 - `pubDate: date` (required)
 - `description: string` (optional)
 - `featured_image: string` (optional)
-- `authors: string | string[]` (optional) - Comma-separated author IDs, automatically parsed to arrays
+- `author: string` (optional) - Simple author name string for SEO purposes
 - `tags: string | string[]` (optional) - Comma-separated tags, automatically parsed to arrays
-
-Authors collection schema (`src/content/config.ts`):
-
-- `name: string` (required)
-- `bio: string` (optional)
-- `avatar: string` (optional)
-- `email: string` (optional)
-- `twitter: string` (optional)
-- `linkedin: string` (optional)
-- `website: string` (optional)
 
 ### Deployment
 
