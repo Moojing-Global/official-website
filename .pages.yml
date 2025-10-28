@@ -4,22 +4,6 @@ media:
     input: src/media
     output: /media
     path: /media
-    
-  - name: resources
-    label: Resources
-    type: file
-    input: src/content/downloads
-    output: /downloads
-    path: /downloads
-    extensions: [pdf]
-    fields:
-      - name: title
-        label: Title
-        type: string
-      - name: date
-        label: Publication Date
-        type: date
-
 
 content:
   - name: blog
