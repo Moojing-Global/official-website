@@ -2,29 +2,37 @@
 import Favicon from "./Favicon.astro";
 import { siteConfig } from "../config/siteConfig";
 
-export interface Props {
-    title?: string;
-    description?: string;
-    canonical?: string;
-    image?: string;
-    imageAlt?: string;
-    type?: "website" | "article";
-    noindex?: boolean;
-    author?: string;
-    pubDate?: Date;
+export interface SeoMeta {
+	title?: string;
+	description?: string;
+	canonical?: string;
+	image?: string;
+	imageAlt?: string;
+	type?: "website" | "article";
+	noindex?: boolean;
+	author?: string;
+	pubDate?: Date;
 }
 
+export interface Props extends SeoMeta {
+	// Support passing a seoMeta object directly
+	seoMeta?: SeoMeta;
+}
+
+// If seoMeta object is passed, use it; otherwise use individual props
+const seoMeta = Astro.props.seoMeta || Astro.props;
+
 const {
-    title = siteConfig.title,
-    description = siteConfig.description,
-    canonical,
-    image = siteConfig.ogImage.src,
-    imageAlt = siteConfig.ogImage.alt,
-    type = "website",
-    noindex = false,
-    author,
-    pubDate,
-} = Astro.props;
+	title = siteConfig.title,
+	description = siteConfig.description,
+	canonical,
+	image = siteConfig.ogImage.src,
+	imageAlt = siteConfig.ogImage.alt,
+	type = "website",
+	noindex = false,
+	author,
+	pubDate,
+} = seoMeta;
 
 // Construct full title with site name
 const fullTitle =

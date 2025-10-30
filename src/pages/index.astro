@@ -2,14 +2,33 @@
 import MainLayout from "@layouts/MainLayout.astro";
 import { Icon } from "astro-icon/components";
 
-const title = "Coming Soon";
-const description = "Our website is coming soon. Stay tuned for updates!";
-const canonical = "/";
+// SEO metadata
+export const seoMeta = {
+    title: "Coming Soon",
+    description: "Our website is coming soon. Stay tuned for updates!",
+    canonical: "/",
+};
+
+// Navigation metadata
+export const navMeta = {
+    title: "Home",
+    menuOrder: 1,
+};
 ---
 
-<MainLayout {title} {description} {canonical}>
-    <div class="flex place-items-center text-5xl">
-        <h1 class="font-black">Coming Soon</h1>
-        <Icon name="tabler:accessible" class="text-red-400" />
+<MainLayout {seoMeta}>
+    <div
+        class="container mx-auto flex min-h-[70vh] max-w-4xl flex-col items-center justify-center space-y-8 px-4 text-center"
+    >
+        <div class="flex items-center gap-4 text-5xl">
+            <h1 class="font-black">Coming Soon</h1>
+            <Icon name="tabler:accessible" class="text-red-400" />
+        </div>
+        <p class="text-base-content/70 text-xl">
+            Our website is under construction. Stay tuned for exciting updates!
+        </p>
+        <a href="/style-guide" class="btn btn-primary btn-lg">
+            View Style Guide
+        </a>
     </div>
 </MainLayout>

@@ -14,6 +14,8 @@
     "@astrojs/mdx": "^4.3.8",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/ts-plugin": "^1.10.5",
+    "@fontsource/geist-mono": "^5.2.7",
+    "@fontsource/geist-sans": "^5.2.5",
     "@iconify-json/tabler": "^1.2.23",
     "@iconify/icons-tabler": "^1.2.95",
     "@tailwindcss/vite": "^4.1.16",
@@ -27,7 +29,8 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19"
+    "@tailwindcss/typography": "^0.5.19",
+    "daisyui": "^5.3.10"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.9.5"

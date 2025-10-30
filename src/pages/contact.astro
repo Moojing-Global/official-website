@@ -1,0 +1,30 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+
+// SEO metadata
+export const seoMeta = {
+	title: "Contact Us",
+	description:
+		"Get in touch with us. We'd love to hear from you!",
+	canonical: "/contact",
+};
+
+// Navigation metadata
+export const navMeta = {
+	title: "Contact",
+	menuOrder: 4,
+};
+---
+
+<MainLayout {seoMeta}>
+	<div
+		class="container mx-auto flex min-h-[70vh] max-w-4xl flex-col items-center justify-center space-y-8 px-4 text-center"
+	>
+		<h1 class="text-5xl font-black">Contact Us</h1>
+		<p class="text-base-content/70 text-xl">
+			This page is coming soon. We'll add contact information and a contact
+			form here.
+		</p>
+		<a href="/" class="btn btn-primary btn-lg"> Back to Home </a>
+	</div>
+</MainLayout>

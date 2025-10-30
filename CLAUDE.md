@@ -8,6 +8,7 @@ This is an **early-stage MVP** for a B2B tech company website with blogging capa
 
 **Current State:**
 - ✅ Astro v5 + TypeScript + Tailwind CSS v4 foundation
+- ✅ DaisyUI component library for UI components
 - ✅ Blog with content collections and Pages CMS integration
 - ✅ SEO meta tags and structured data (article schema)
 - ✅ Cloudflare Pages deployment configuration
@@ -72,16 +73,55 @@ Configured in `tsconfig.json`:
 **Components:**
 - `BaseHead.astro` - Handles all SEO meta tags, Open Graph, Twitter Cards, and article schema
 - `MainLayout.astro` - Base page layout that wraps content and delegates SEO props to BaseHead
-- `Favicon.astro` - Manages favicon links (files in `public/favicon/`)
+- `Navbar.astro` - Dynamic navigation component that reads `navMeta` from pages
+- `Favicon.astro` - Manages favicon links (files in `public/brand/favicon/`)
 
-**MainLayout Props:**
-- `title`, `description` - SEO titles and descriptions
+**Page Frontmatter Pattern:**
+Pages use two separate exported objects to avoid duplication:
+
+```astro
+---
+import MainLayout from "@layouts/MainLayout.astro";
+
+// SEO metadata (passed to BaseHead via MainLayout)
+export const frontmatter = {
+	title: "Page Title",
+	description: "Page description for SEO",
+	canonical: "/page-url",
+	type: "website", // or "article"
+	noindex: false,
+	author: "Author Name", // for articles
+	pubDate: new Date(), // for articles
+	image: "/path/to/image.jpg",
+	imageAlt: "Image description",
+};
+
+// Navigation metadata (used by Navbar component)
+export const navMeta = {
+	title: "Nav Title", // Shorter title for nav
+	menuOrder: 1, // Display order in navigation
+};
+---
+
+<MainLayout {frontmatter}>
+	<!-- Page content -->
+</MainLayout>
+```
+
+**Frontmatter Properties (SEO):**
+- `title` - Page title (combined with site name in `<title>` tag)
+- `description` - Meta description for SEO
 - `canonical` - Canonical URL path (automatically converted to full URL)
 - `image`, `imageAlt` - Open Graph and Twitter Card images
 - `type` - Either `"website"` (default) or `"article"` for blog posts
 - `noindex` - Set to true to prevent search engine indexing
 - `author` - Author name for article schema (adds `author` and `article:author` meta tags)
 - `pubDate` - Publication date for article schema (adds `article:published_time` meta tag)
+
+**NavMeta Properties (Navigation):**
+- `title` - Display text in navigation menu
+- `menuOrder` - Sort order for navigation links (ascending)
+- Only pages with `navMeta.menuOrder` appear in navigation
 
 **Image URL Encoding:**
 - Image paths are automatically encoded segment-by-segment to handle spaces and special characters
@@ -117,6 +157,26 @@ Configured for **Cloudflare Pages** with the adapter `@astrojs/cloudflare`:
 ### Styling Approach
 
 - **Tailwind CSS v4**: Uses zero-config approach with `@import "tailwindcss"` in `src/styles/global.css`
+- **DaisyUI**: Component library built on Tailwind CSS for pre-styled UI components (buttons, cards, navbars, etc.)
+  - Provides semantic component classes that work seamlessly with Tailwind utilities
+  - Custom themes configured in `src/styles/global.css`: `moojing-light` (default) and `moojing-dark` (prefers dark mode)
+  - When building UI components, prefer DaisyUI components for consistency and maintainability
+  - **DO NOT use dark: variants** - theme switching is handled automatically by DaisyUI's theme system
+
+**DaisyUI Semantic Colors:**
+Use these semantic color classes instead of specific colors (they adapt to the active theme):
+- `bg-base-100` - Page background
+- `bg-base-200` - Secondary background (cards, inputs)
+- `bg-base-300` - Tertiary background (hover states)
+- `text-base-content` - Primary text color
+- `text-base-content/60` - Muted text (60% opacity)
+- `bg-primary`, `text-primary` - Primary brand color
+- `bg-secondary`, `text-secondary` - Secondary brand color
+- `bg-accent`, `text-accent` - Accent color
+- `bg-neutral`, `text-neutral` - Neutral color
+- Status colors: `bg-info`, `bg-success`, `bg-warning`, `bg-error`
+
+**Other Features:**
 - **No custom config file**: Relying on Tailwind v4's defaults (no `tailwind.config.js`)
 - **Typography plugin**: For automatic styling of blog post content
 - **Prettier**: Configured with `prettier-plugin-tailwindcss` for automatic class sorting

@@ -1,13 +1,22 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 
-const title = "About Us";
-const description =
-    "Learn more about our company, mission, and the team behind our success.";
-const canonical = "/about";
+// SEO metadata
+export const seoMeta = {
+	title: "About Us",
+	description:
+		"Learn more about our company, mission, and the team behind our success.",
+	canonical: "/about",
+};
+
+// Navigation metadata
+export const navMeta = {
+	title: "About",
+	menuOrder: 3,
+};
 ---
 
-<MainLayout {title} {description} {canonical}>
+<MainLayout {seoMeta}>
     <main>
         <h1>About Us</h1>
         <p>This is an example page demonstrating frontmatter SEO.</p>
