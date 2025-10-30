@@ -3,6 +3,7 @@
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+<<<<<<< HEAD
 @plugin "daisyui";
 
 @plugin "daisyui/theme" {
@@ -75,4 +76,13 @@
 @theme {
   --font-sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
+=======
+
+@import "geist/font/sans";
+@import "geist/font/mono";
+
+@theme {
+  --font-family-sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: "Geist Mono", ui-monospace, monospace;
+>>>>>>> 4ef3def021b4db974b1aa42c4737f478e3405d9a
 }
