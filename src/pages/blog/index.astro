@@ -8,30 +8,26 @@ const canonical = "/blog";
 
 const posts = await getCollection("blog");
 const sortedPosts = posts.sort(
-    (a, b) =>
-        new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
+  (a, b) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
 );
 ---
 
 <MainLayout {title} {description} {canonical}>
-    <main>
-        <h1>Blog Posts</h1>
-        <ul>
-            {
-                sortedPosts.map((post) => (
-                    <li>
-                        <a href={`/blog/${post.slug}`}>
-                            <h2>{post.data.title}</h2>
-                            {post.data.description && (
-                                <p>{post.data.description}</p>
-                            )}
-                            <time>
-                                {post.data.pubDate.toLocaleDateString()}
-                            </time>
-                        </a>
-                    </li>
-                ))
-            }
-        </ul>
-    </main>
+  <main>
+    <h1>Blog Posts</h1>
+    <ul>
+      {
+        sortedPosts.map((post) => (
+          <li>
+            <a href={`/blog/${post.slug}`}>
+              <h2>{post.data.title}</h2>
+              {post.data.description && <p>{post.data.description}</p>}
+              <time>{post.data.pubDate.toLocaleDateString()}</time>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
 </MainLayout>

@@ -3,11 +3,11 @@ import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-    const posts = await getCollection("blog");
-    return posts.map((post) => ({
-        params: { slug: post.slug },
-        props: { post },
-    }));
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
 }
 
 const { post } = Astro.props;
@@ -23,27 +23,23 @@ const author = post.data.author;
 ---
 
 <MainLayout {title} {description} {canonical} {image} {type} {author} {pubDate}>
-    <article>
-        <h1>{post.data.title}</h1>
-        
-        <div class="post-meta">
-            {author && (
-                <p class="author">
-                    By {author}
-                </p>
-            )}
-            <time>{post.data.pubDate.toLocaleDateString()}</time>
-        </div>
+  <article>
+    <h1>{post.data.title}</h1>
 
-        {
-            post.data.tags && (
-                <div class="tags">
-                    {post.data.tags.map((tag) => (
-                        <span class="tag">{tag}</span>
-                    ))}
-                </div>
-            )
-        }
-        <Content />
-    </article>
+    <div class="post-meta">
+      {author && <p class="author">By {author}</p>}
+      <time>{post.data.pubDate.toLocaleDateString()}</time>
+    </div>
+
+    {
+      post.data.tags && (
+        <div class="tags">
+          {post.data.tags.map((tag) => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      )
+    }
+    <Content />
+  </article>
 </MainLayout>
