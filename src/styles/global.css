@@ -1,2 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@import "geist/font/sans";
+@import "geist/font/mono";
+
+@theme {
+  --font-family-sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: "Geist Mono", ui-monospace, monospace;
+}
