@@ -1,6 +1,7 @@
 ---
-import { getNavLinks } from "../utils/navigation";
+import { getNavItems, isDropdown } from "../utils/navigation";
 import { Button } from "@components/starwind/button";
+import { Dropdown } from "@components/starwind/dropdown";
 import { Icon } from "astro-icon/components";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 }
 
 const { currentPath = "/" } = Astro.props;
-const navLinks = await getNavLinks();
+const navItems = getNavItems();
 
 // Normalize paths for comparison
 const normalizedCurrentPath = currentPath === "" ? "/" : currentPath;
@@ -18,47 +19,74 @@ const normalizedCurrentPath = currentPath === "" ? "/" : currentPath;
     class="border-border bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur"
     aria-label="Main navigation"
 >
+    <!-- Desktop: 3-column grid layout -->
     <div
-        class="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4"
+        class="container mx-auto hidden h-16 max-w-7xl grid-cols-3 items-center px-4 lg:grid"
     >
-        <!-- Logo -->
-        <a href="/" class="flex items-center gap-2" aria-label="Home">
-            <picture>
-                <source srcset="/brand/MooJing_Logo.webp" type="image/webp" />
-                <img
-                    src="/brand/MooJing_Logo.png"
-                    alt="MooJing Logo"
-                    class="h-10 w-auto"
-                    width="40"
-                    height="40"
-                />
-            </picture>
-        </a>
+        <!-- Left: Logo -->
+        <div class="flex items-center">
+            <a href="/" class="flex items-center gap-2" aria-label="Home">
+                <picture class="dark:hidden">
+                    <source
+                        srcset="/brand/MooJing_Wordmark.webp"
+                        type="image/webp"
+                    />
+                    <img
+                        src="/brand/MooJing_Wordmark.png"
+                        alt="MooJing Logo"
+                        class="h-10 w-auto"
+                    />
+                </picture>
+                <picture class="hidden dark:block">
+                    <source
+                        srcset="/brand/MooJing_Wordmark_White.webp"
+                        type="image/webp"
+                    />
+                    <img
+                        src="/brand/MooJing_Wordmark_White.png"
+                        alt="MooJing Logo"
+                        class="h-10 w-auto"
+                    />
+                </picture>
+            </a>
+        </div>
 
-        <!-- Desktop Navigation -->
-        <div class="hidden items-center gap-6 md:flex">
+        <!-- Center: Navigation -->
+        <div class="flex w-full items-center justify-center gap-4">
             {
-                navLinks.map((link) => {
-                    const isActive = normalizedCurrentPath === link.href;
-                    return (
-                        <a
-                            href={link.href}
-                            class={`hover:text-foreground text-sm font-medium transition-colors ${
-                                isActive
-                                    ? "text-foreground"
-                                    : "text-muted-foreground"
-                            }`}
-                            aria-current={isActive ? "page" : undefined}
-                        >
-                            {link.title}
-                        </a>
-                    );
+                navItems.map((item) => {
+                    if (isDropdown(item)) {
+                        return (
+                            <Dropdown
+                                title={item.title}
+                                path={item.path}
+                                items={item.children!}
+                                viewAllText={item.viewAllText}
+                                currentPath={normalizedCurrentPath}
+                            />
+                        );
+                    } else {
+                        const isActive = normalizedCurrentPath === item.path;
+                        return (
+                            <a
+                                href={item.path}
+                                class={`hover:text-foreground text-base font-medium transition-colors ${
+                                    isActive
+                                        ? "text-foreground"
+                                        : "text-muted-foreground"
+                                }`}
+                                aria-current={isActive ? "page" : undefined}
+                            >
+                                {item.title}
+                            </a>
+                        );
+                    }
                 })
             }
         </div>
 
-        <!-- Action Buttons (Desktop) -->
-        <div class="hidden items-center gap-3 md:flex">
+        <!-- Right: Action Buttons -->
+        <div class="flex items-center justify-end gap-3">
             <button
                 id="theme-toggle-desktop"
                 class="text-foreground hover:bg-muted focus-visible:ring-outline flex items-center justify-center rounded-md p-2 focus-visible:ring-2 focus-visible:outline-none"
@@ -72,9 +100,40 @@ const normalizedCurrentPath = currentPath === "" ? "/" : currentPath;
             </Button>
             <Button href="/login" variant="primary" size="md"> Login </Button>
         </div>
+    </div>
+
+    <!-- Mobile: Flex layout -->
+    <div
+        class="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:hidden"
+    >
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2" aria-label="Home">
+            <picture class="dark:hidden">
+                <source
+                    srcset="/brand/MooJing_Wordmark.webp"
+                    type="image/webp"
+                />
+                <img
+                    src="/brand/MooJing_Wordmark.png"
+                    alt="MooJing Logo"
+                    class="h-10 w-auto"
+                />
+            </picture>
+            <picture class="hidden dark:block">
+                <source
+                    srcset="/brand/MooJing_Wordmark_White.webp"
+                    type="image/webp"
+                />
+                <img
+                    src="/brand/MooJing_Wordmark_White.png"
+                    alt="MooJing Logo"
+                    class="h-10 w-auto"
+                />
+            </picture>
+        </a>
 
         <!-- Mobile Buttons (Theme Toggle + Menu) -->
-        <div class="flex items-center gap-2 md:hidden">
+        <div class="flex items-center gap-2">
             <button
                 id="theme-toggle-mobile"
                 class="text-foreground hover:bg-muted focus-visible:ring-outline flex items-center justify-center rounded-md p-2 focus-visible:ring-2 focus-visible:outline-none"
@@ -113,21 +172,63 @@ const normalizedCurrentPath = currentPath === "" ? "/" : currentPath;
     >
         <div class="container mx-auto space-y-1 px-4 py-4">
             {
-                navLinks.map((link) => {
-                    const isActive = normalizedCurrentPath === link.href;
-                    return (
-                        <a
-                            href={link.href}
-                            class={`hover:bg-muted block rounded-md px-3 py-2 text-base font-medium transition-colors ${
-                                isActive
-                                    ? "bg-muted text-foreground"
-                                    : "text-muted-foreground"
-                            }`}
-                            aria-current={isActive ? "page" : undefined}
-                        >
-                            {link.title}
-                        </a>
-                    );
+                navItems.map((item) => {
+                    if (isDropdown(item)) {
+                        // Mobile dropdown - expanded section
+                        return (
+                            <div class="space-y-1">
+                                <div class="text-foreground px-3 py-2 text-sm font-semibold">
+                                    {item.title}
+                                </div>
+                                <a
+                                    href={item.path}
+                                    class={`hover:bg-muted block rounded-md px-3 py-2 pl-6 text-sm transition-colors ${
+                                        normalizedCurrentPath === item.path
+                                            ? "bg-muted text-foreground"
+                                            : "text-muted-foreground"
+                                    }`}
+                                >
+                                    View All
+                                </a>
+                                {item.children!.map((child) => {
+                                    const isChildActive =
+                                        normalizedCurrentPath === child.path;
+                                    return (
+                                        <a
+                                            href={child.path}
+                                            class={`hover:bg-muted block rounded-md px-3 py-2 pl-6 text-sm transition-colors ${
+                                                isChildActive
+                                                    ? "bg-muted text-foreground"
+                                                    : "text-muted-foreground"
+                                            }`}
+                                            aria-current={
+                                                isChildActive
+                                                    ? "page"
+                                                    : undefined
+                                            }
+                                        >
+                                            {child.title}
+                                        </a>
+                                    );
+                                })}
+                            </div>
+                        );
+                    } else {
+                        const isActive = normalizedCurrentPath === item.path;
+                        return (
+                            <a
+                                href={item.path}
+                                class={`hover:bg-muted block rounded-md px-3 py-2 text-base font-medium transition-colors ${
+                                    isActive
+                                        ? "bg-muted text-foreground"
+                                        : "text-muted-foreground"
+                                }`}
+                                aria-current={isActive ? "page" : undefined}
+                            >
+                                {item.title}
+                            </a>
+                        );
+                    }
                 })
             }
             <div class="flex flex-col gap-2 pt-4">

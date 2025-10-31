@@ -1,56 +1,49 @@
 /**
- * Navigation utility for extracting and sorting navigation links from pages
+ * Navigation utility for loading and validating navConfig
  */
 
-export interface NavMeta {
+import navConfigData from "../config/navConfig.json";
+
+export interface NavChild {
 	title: string;
-	menuOrder: number;
+	path: string;
+	description?: string;
 }
 
-export interface NavLink {
+export interface NavItem {
 	title: string;
-	href: string;
-	menuOrder: number;
+	path: string;
+	description?: string;
+	viewAllText?: string;
+	children?: NavChild[];
+}
+
+export interface NavConfig {
+	navigation: NavItem[];
 }
 
 /**
- * Get all navigation links from pages with navMeta exports
- * @param currentPath - The current page path for active state detection
- * @returns Sorted array of navigation links
+ * Load navigation configuration from navConfig.json
+ * @returns Navigation configuration object
  */
-export async function getNavLinks(): Promise<NavLink[]> {
-	// Import all page modules from src/pages
-	const pages = import.meta.glob<{ navMeta?: NavMeta }>("/src/pages/**/*.astro", {
-		eager: true,
-	});
+export function getNavConfig(): NavConfig {
+	return navConfigData as NavConfig;
+}
 
-	const navLinks: NavLink[] = [];
+/**
+ * Get all navigation items
+ * @returns Array of navigation items in order
+ */
+export function getNavItems(): NavItem[] {
+	const config = getNavConfig();
+	return config.navigation;
+}
 
-	for (const [path, module] of Object.entries(pages)) {
-		// Skip if no navMeta export
-		if (!module.navMeta) continue;
-
-		// Convert file path to URL path
-		let href = path
-			.replace("/src/pages", "")
-			.replace(/\.astro$/, "")
-			.replace(/\/index$/, "");
-
-		// Handle root index
-		if (href === "/index" || href === "") {
-			href = "/";
-		}
-
-		// Skip dynamic routes (contain brackets)
-		if (href.includes("[")) continue;
-
-		navLinks.push({
-			title: module.navMeta.title,
-			href,
-			menuOrder: module.navMeta.menuOrder,
-		});
-	}
-
-	// Sort by menuOrder
-	return navLinks.sort((a, b) => a.menuOrder - b.menuOrder);
+/**
+ * Check if a nav item has children (is a dropdown)
+ * @param item - Navigation item to check
+ * @returns True if item has children
+ */
+export function isDropdown(item: NavItem): boolean {
+	return Array.isArray(item.children) && item.children.length > 0;
 }

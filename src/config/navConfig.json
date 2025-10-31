@@ -1,0 +1,57 @@
+{
+  "navigation": [
+    {
+      "title": "Home",
+      "path": "/"
+    },
+    {
+      "title": "About",
+      "path": "/about"
+    },
+    {
+      "title": "MoInsights",
+      "path": "/moinsights",
+      "description": "Data-driven insights for your business",
+      "viewAllText": "About MoInsights",
+      "children": [
+        {
+          "title": "MoTrends",
+          "path": "/moinsights/motrends",
+          "description": "Track market trends and patterns"
+        },
+        {
+          "title": "MoListening",
+          "path": "/moinsights/molistening",
+          "description": "Social listening and sentiment analysis"
+        },
+        {
+          "title": "MoAnalytics",
+          "path": "/moinsights/moanalytics",
+          "description": "Advanced analytics and reporting"
+        }
+      ]
+    },
+    {
+      "title": "MoEnterprise",
+      "path": "/moenterprise",
+      "description": "Enterprise solutions and consulting",
+      "viewAllText": "About MoEnterprise",
+      "children": [
+        {
+          "title": "MoConsult",
+          "path": "/moenterprise/moconsult",
+          "description": "Strategic consulting services"
+        },
+        {
+          "title": "MoProcessing",
+          "path": "/moenterprise/moprocessing",
+          "description": "Data processing and integration"
+        }
+      ]
+    },
+    {
+      "title": "Blog",
+      "path": "/blog"
+    }
+  ]
+}

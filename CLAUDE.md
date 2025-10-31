@@ -9,7 +9,9 @@ This is an **early-stage MVP** for a B2B tech company website with blogging capa
 **Current State:**
 - ✅ Astro v5 + TypeScript + Tailwind CSS v4 foundation
 - ✅ Starwind component system for UI components
-- ✅ Navbar with dark mode toggle (Tabler icons via astro-icon)
+- ✅ Accessible navbar with dropdowns (MoInsights, MoEnterprise product suites)
+- ✅ Dark mode toggle (Tabler icons via astro-icon)
+- ✅ Navigation via hand-coded navConfig.json (Hugo-style)
 - ✅ Blog with content collections and Pages CMS integration
 - ✅ SEO meta tags and structured data (article schema)
 - ✅ Cloudflare Pages deployment configuration
@@ -78,14 +80,14 @@ Configured in `tsconfig.json`:
 - `Favicon.astro` - Manages favicon links (files in `public/brand/favicon/`)
 
 **Page Frontmatter Pattern:**
-Pages use two separate exported objects to avoid duplication:
+Pages use a single exported `seoMeta` object for SEO metadata:
 
 ```astro
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 
 // SEO metadata (passed to BaseHead via MainLayout)
-export const frontmatter = {
+export const seoMeta = {
 	title: "Page Title",
 	description: "Page description for SEO",
 	canonical: "/page-url",
@@ -96,20 +98,14 @@ export const frontmatter = {
 	image: "/path/to/image.jpg",
 	imageAlt: "Image description",
 };
-
-// Navigation metadata (used by Navbar component)
-export const navMeta = {
-	title: "Nav Title", // Shorter title for nav
-	menuOrder: 1, // Display order in navigation
-};
 ---
 
-<MainLayout {frontmatter}>
+<MainLayout {seoMeta}>
 	<!-- Page content -->
 </MainLayout>
 ```
 
-**Frontmatter Properties (SEO):**
+**SEO Metadata Properties:**
 - `title` - Page title (combined with site name in `<title>` tag)
 - `description` - Meta description for SEO
 - `canonical` - Canonical URL path (automatically converted to full URL)
@@ -119,13 +115,74 @@ export const navMeta = {
 - `author` - Author name for article schema (adds `author` and `article:author` meta tags)
 - `pubDate` - Publication date for article schema (adds `article:published_time` meta tag)
 
-**NavMeta Properties (Navigation):**
-- `title` - Display text in navigation menu (used by Navbar component)
-- `menuOrder` - Sort order for navigation links (used by Navbar component to determine order and visibility)
-
 **Image URL Encoding:**
 - Image paths are automatically encoded segment-by-segment to handle spaces and special characters
 - Example: `/media/Image from OpenGraph.png` → properly encoded for Open Graph tags
+
+### Navigation Configuration
+
+**Navigation is configured via a centralized JSON file** at `src/config/navConfig.json`:
+
+**Structure:**
+```json
+{
+  "navigation": [
+    {
+      "title": "Home",
+      "path": "/"
+    },
+    {
+      "title": "MoInsights",
+      "path": "/moinsights",
+      "description": "Optional suite description",
+      "viewAllText": "View All Insights",
+      "children": [
+        {
+          "title": "MoTrends",
+          "path": "/moinsights/motrends",
+          "description": "Optional product description"
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Properties:**
+- `title` (required) - Display text for nav item
+- `path` (required) - URL path
+- `description` (optional) - Description text shown in dropdown
+- `viewAllText` (optional) - Custom text for parent link in dropdown (defaults to "View All {title}")
+- `children` (optional) - Array of child items (makes item a dropdown)
+
+**Key Features:**
+- **Hand-coded configuration** - Not managed by Pages CMS, edit directly in IDE
+- **Hugo-style approach** - Items with `children` array automatically become dropdowns
+- **Array-based ordering** - Position in array determines display order
+- **Full config** - All display properties (title, path, description) defined in config
+- **TypeScript types** - Validated types in `src/utils/navigation.ts`
+
+**Dropdown Behavior:**
+- **Desktop**: Click-to-toggle with arrow key navigation (↑↓ to navigate, Enter to select, Escape to close)
+- **Auto-close**: Opening one dropdown automatically closes others (accordion-style)
+- **Mobile**: Expanded sections showing all children inline
+- **Parent links accessible**: First item in dropdown uses customizable `viewAllText` or defaults to "View All {title}"
+- **WCAG Compliant**: Full keyboard navigation, ARIA labels, focus management
+
+**Layout:**
+- **Desktop**: 3-column grid layout (Logo | Navigation | Actions) for centered navigation
+- **Mobile**: Flex layout (Logo | Buttons) with collapsible menu
+
+**Navigation Utilities** (`src/utils/navigation.ts`):
+- `getNavConfig()` - Load full navigation configuration
+- `getNavItems()` - Get array of navigation items in order
+- `isDropdown(item)` - Check if item has children
+
+**Component** (`src/components/starwind/dropdown/Dropdown.astro`):
+- Accessible dropdown with full keyboard support
+- Starwind semantic colors
+- Active state highlighting
+- Descriptions shown for children (optional)
 
 ### Content Collections
 
