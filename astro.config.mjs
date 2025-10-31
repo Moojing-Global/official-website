@@ -16,7 +16,15 @@ export default defineConfig({
     },
 
     integrations: [icon(), sitemap(), mdx()],
+
     adapter: cloudflare({
         imageService: 'compile'
     }),
+
+    image: {
+        service: {
+            entrypoint: 'astro/assets/services/sharp'
+        },
+        domains: [siteConfig.url],
+    },
 });

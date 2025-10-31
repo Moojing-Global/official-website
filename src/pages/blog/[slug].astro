@@ -23,23 +23,41 @@ const author = post.data.author;
 ---
 
 <MainLayout {title} {description} {canonical} {image} {type} {author} {pubDate}>
-  <article>
-    <h1>{post.data.title}</h1>
+  <article class="prose prose-lg dark:prose-invert mx-auto max-w-4xl px-4 py-12">
+    <header class="mb-8">
+      <h1 class="text-foreground mb-4 text-4xl font-bold md:text-5xl">{post.data.title}</h1>
 
-    <div class="post-meta">
-      {author && <p class="author">By {author}</p>}
-      <time>{post.data.pubDate.toLocaleDateString()}</time>
-    </div>
+      <div class="text-muted-foreground mb-4 flex flex-wrap items-center gap-4 text-sm">
+        {author && <p class="m-0">By {author}</p>}
+        <time>{post.data.pubDate.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })}</time>
+      </div>
 
-    {
-      post.data.tags && (
-        <div class="tags">
+      {post.data.tags && post.data.tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-6">
           {post.data.tags.map((tag) => (
-            <span class="tag">{tag}</span>
+            <span class="bg-muted text-muted-foreground rounded-full px-3 py-1 text-xs">
+              {tag}
+            </span>
           ))}
         </div>
-      )
-    }
+      )}
+
+      {post.data.featured_image && (
+        <div class="my-8 overflow-hidden rounded-lg">
+          <img
+            src={post.data.featured_image}
+            alt={post.data.title}
+            loading="eager"
+            class="w-full object-cover"
+          />
+        </div>
+      )}
+    </header>
+
     <Content />
   </article>
 </MainLayout>

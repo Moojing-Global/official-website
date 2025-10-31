@@ -52,14 +52,33 @@ The project uses **Pages CMS** (configured via `.pages.yml`) for content editing
 
 ### Image Handling
 
-The project uses a **simple static image approach**:
+The project uses a **hybrid image optimization strategy**:
 
-- **Pages CMS uploads to**: `public/media/` (static files, served at `/media/` URL)
-- Images are referenced directly in markdown content and frontmatter using `/media/` paths
-- No build-time image optimization currently implemented
-- Images are served as-is from the static public directory
+**Static/Component Images** (Optimized):
+- **Location**: `src/assets/brand/` - Brand assets like logos, wordmarks
+- **Usage**: Import in components → Use Astro's `<Image>` component
+- **Optimization**: Build-time WebP conversion, responsive images via Sharp
+- **Example**: Logo component imports and optimizes brand assets automatically
 
-**Note:** Image optimization utilities (lazy loading, responsive images, WebP conversion) are not yet implemented but are planned for future enhancement.
+**CMS/Blog Content Images** (Static):
+- **Location**: `public/media/` - Blog images, content uploads
+- **Upload**: Pages CMS uploads directly to `public/media/` (served at `/media/` URL)
+- **Usage**: Reference in markdown: `![Alt text](/media/image.jpg)` or frontmatter: `featured_image: /media/image.jpg`
+- **Optimization**: None - served as-is from public directory
+- **Recommendation**: Pre-optimize images before upload (TinyPNG, export as WebP)
+
+**Why This Approach:**
+- **Simplicity**: CMS users can upload images without technical knowledge
+- **No build complexity**: Markdown images work immediately with standard syntax
+- **Selective optimization**: Critical brand assets are optimized, content images are straightforward
+- **Future-proof**: Can add Cloudflare Image Resizing or remark plugins later if needed
+
+**Directory Structure:**
+```
+/src/assets/brand/          → Optimized logos (WebP, responsive)
+/public/brand/favicon/      → Favicons (must be in public)
+/public/media/              → CMS uploads (blog images, served as-is)
+```
 
 ### TypeScript Path Aliases
 

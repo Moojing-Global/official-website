@@ -1,10 +1,6 @@
 {
   "navigation": [
     {
-      "title": "Home",
-      "path": "/"
-    },
-    {
       "title": "Product",
       "path": "/moinsights",
       "description": "Data-driven insights for your business",

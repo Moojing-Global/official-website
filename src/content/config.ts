@@ -6,6 +6,7 @@ const blog = defineCollection({
     title: z.string(),
     pubDate: z.date(),
     description: z.string().optional(),
+    // Image path - /media/ for CMS uploads (public folder) or external URL
     featured_image: z.string().optional(),
     author: z.string().optional(),
     tags: z.union([

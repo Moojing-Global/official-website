@@ -1,38 +1,39 @@
 ---
-/**
- * Logo Component
- * Displays the MooJing wordmark with theme-aware variants (light/dark)
- * Supports responsive sizing via class prop
- */
+import { Image } from "astro:assets";
+import logoLight from "../assets/brand/MooJing_Wordmark.png";
+import logoDark from "../assets/brand/MooJing_Wordmark_White.png";
 
 interface Props {
-	/** Additional classes for the logo container */
-	class?: string;
-	/** Additional classes for the image element */
-	imgClass?: string;
+    /** Additional classes for the logo container */
+    class?: string;
+    /** Additional classes for the image element */
+    imgClass?: string;
 }
 
 const { class: className = "", imgClass = "h-10 w-auto" } = Astro.props;
 ---
 
 <a href="/" class={`flex items-center ${className}`} aria-label="Home">
-	<picture class="dark:hidden min-w-0 max-w-full">
-		<source srcset="/brand/MooJing_Wordmark.webp" type="image/webp" />
-		<img
-			src="/brand/MooJing_Wordmark.png"
-			alt="MooJing Logo"
-			class={imgClass}
-		/>
-	</picture>
-	<picture class="hidden dark:block min-w-0 max-w-full">
-		<source
-			srcset="/brand/MooJing_Wordmark_White.webp"
-			type="image/webp"
-		/>
-		<img
-			src="/brand/MooJing_Wordmark_White.png"
-			alt="MooJing Logo"
-			class={imgClass}
-		/>
-	</picture>
+    <!-- Light Mode Logo -->
+    <Image
+        src={logoLight}
+        alt="MooJing Logo"
+        width={200}
+        height={40}
+        format="webp"
+        quality={90}
+        loading="eager"
+        class={`dark:hidden min-w-0 max-w-full ${imgClass}`}
+    />
+    <!-- Dark Mode Logo -->
+    <Image
+        src={logoDark}
+        alt="MooJing Logo"
+        width={200}
+        height={40}
+        format="webp"
+        quality={90}
+        loading="eager"
+        class={`hidden dark:block min-w-0 max-w-full ${imgClass}`}
+    />
 </a>
