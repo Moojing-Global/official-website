@@ -5,10 +5,6 @@
       "path": "/"
     },
     {
-      "title": "About",
-      "path": "/about"
-    },
-    {
       "title": "MoInsights",
       "path": "/moinsights",
       "description": "Data-driven insights for your business",
@@ -50,8 +46,26 @@
       ]
     },
     {
+      "title": "About",
+      "path": "/about"
+    },
+    {
       "title": "Blog",
       "path": "/blog"
+    }
+  ],
+  "actionButtons": [
+    {
+      "label": "Contact Us",
+      "path": "/contact",
+      "variant": "ghost",
+      "icon": ""
+    },
+    {
+      "label": "Login",
+      "path": "/login",
+      "variant": "primary",
+      "icon": ""
     }
   ]
 }

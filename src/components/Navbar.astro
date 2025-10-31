@@ -1,5 +1,5 @@
 ---
-import { getNavItems, isDropdown } from "../utils/navigation";
+import { getNavItems, isDropdown, getActionButtons } from "../utils/navigation";
 import { Button } from "@components/starwind/button";
 import { Dropdown } from "@components/starwind/dropdown";
 import { Icon } from "astro-icon/components";
@@ -10,21 +10,23 @@ interface Props {
 
 const { currentPath = "/" } = Astro.props;
 const navItems = getNavItems();
+const actionButtons = getActionButtons();
 
 // Normalize paths for comparison
 const normalizedCurrentPath = currentPath === "" ? "/" : currentPath;
 ---
 
 <nav
-    class="border-border bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur"
+    id="navbar"
+    class="border-border bg-background/95 supports-[backdrop-filter]:bg-background/60 fixed top-0 z-50 w-full border-b backdrop-blur transition-transform duration-300"
     aria-label="Main navigation"
 >
-    <!-- Desktop: 3-column grid layout -->
+    <!-- Desktop: layout -->
     <div
-        class="container mx-auto hidden h-16 max-w-7xl grid-cols-3 items-center px-4 lg:grid"
+        class="container mx-auto hidden h-16 max-w-7xl items-center px-4 lg:flex"
     >
         <!-- Left: Logo -->
-        <div class="flex items-center">
+        <div class="flex w-full items-center">
             <a href="/" class="flex items-center gap-2" aria-label="Home">
                 <picture class="dark:hidden">
                     <source
@@ -63,6 +65,7 @@ const normalizedCurrentPath = currentPath === "" ? "/" : currentPath;
                                 items={item.children!}
                                 viewAllText={item.viewAllText}
                                 currentPath={normalizedCurrentPath}
+                                class="!px-0"
                             />
                         );
                     } else {
@@ -86,7 +89,7 @@ const normalizedCurrentPath = currentPath === "" ? "/" : currentPath;
         </div>
 
         <!-- Right: Action Buttons -->
-        <div class="flex items-center justify-end gap-3">
+        <div class="flex w-full items-center justify-end gap-3">
             <button
                 id="theme-toggle-desktop"
                 class="text-foreground hover:bg-muted focus-visible:ring-outline flex items-center justify-center rounded-md p-2 focus-visible:ring-2 focus-visible:outline-none"
@@ -95,10 +98,18 @@ const normalizedCurrentPath = currentPath === "" ? "/" : currentPath;
                 <Icon name="tabler:sun" class="h-5 w-5 dark:hidden" />
                 <Icon name="tabler:moon" class="hidden h-5 w-5 dark:block" />
             </button>
-            <Button href="/contact" variant="ghost" size="md">
-                Contact Us
-            </Button>
-            <Button href="/login" variant="primary" size="md"> Login </Button>
+            {
+                actionButtons.map((button) => (
+                    <Button
+                        href={button.path}
+                        variant={button.variant || "default"}
+                        size="md"
+                    >
+                        {button.icon && <Icon name={button.icon} />}
+                        {button.label}
+                    </Button>
+                ))
+            }
         </div>
     </div>
 
@@ -232,22 +243,19 @@ const normalizedCurrentPath = currentPath === "" ? "/" : currentPath;
                 })
             }
             <div class="flex flex-col gap-2 pt-4">
-                <Button
-                    href="/contact"
-                    variant="ghost"
-                    size="md"
-                    class="w-full"
-                >
-                    Contact Us
-                </Button>
-                <Button
-                    href="/login"
-                    variant="primary"
-                    size="md"
-                    class="w-full"
-                >
-                    Login
-                </Button>
+                {
+                    actionButtons.map((button) => (
+                        <Button
+                            href={button.path}
+                            variant={button.variant || "default"}
+                            size="md"
+                            class="w-full"
+                        >
+                            {button.icon && <Icon name={button.icon} />}
+                            {button.label}
+                        </Button>
+                    ))
+                }
             </div>
         </div>
     </div>
@@ -322,6 +330,37 @@ const normalizedCurrentPath = currentPath === "" ? "/" : currentPath;
             menuIconClose?.classList.add("hidden");
             menuButton?.setAttribute("aria-expanded", "false");
             menuButton?.focus();
+        }
+    });
+
+    // Navbar show/hide on scroll
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function updateNavbar() {
+        const navbar = document.getElementById("navbar");
+        const currentScrollY = window.scrollY;
+
+        if (!navbar) return;
+
+        // Show navbar when scrolling up or at top of page
+        if (currentScrollY < lastScrollY || currentScrollY < 10) {
+            navbar.style.transform = "translateY(0)";
+        }
+        // Hide navbar when scrolling down (and not at top)
+        else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            navbar.style.transform = "translateY(-100%)";
+        }
+
+        lastScrollY = currentScrollY;
+        ticking = false;
+    }
+
+    // Use requestAnimationFrame for better performance
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateNavbar);
+            ticking = true;
         }
     });
 </script>

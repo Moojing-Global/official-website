@@ -103,7 +103,7 @@
 @layer base {
 	:root {
     /* Light Mode - Using Brand Colors */
-    --background: var(--color-white);
+    --background: var(--color-neutral-50);
     --foreground: var(--color-neutral-950);
     --card: var(--color-white);
     --card-foreground: var(--color-neutral-950);
@@ -133,7 +133,7 @@
 
   .dark {
     /* Dark Mode - Using Brand Colors */
-    --background: var(--color-neutral-950);
+    --background: var(--color-neutral-900);
     --foreground: var(--color-neutral-50);
     --card: var(--color-neutral-900);
     --card-foreground: var(--color-neutral-50);

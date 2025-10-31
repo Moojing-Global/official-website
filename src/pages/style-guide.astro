@@ -1,15 +1,218 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 
-// SEO metadata
 export const seoMeta = {
-	title: "Style Guide",
-	description:
-		"Component library and typography showcase for the design system",
+	title: "Typography Style Guide",
+	description: "A comprehensive typography style guide showcasing text elements and formatting.",
 	canonical: "/style-guide",
+	noindex: true,
 };
 ---
 
-<MainLayout {seoMeta}>
-	<!-- Empty placeholder - ready for Starwind components -->
+<MainLayout seoMeta={seoMeta}>
+	<main class="bg-background py-24 sm:py-32">
+		<div class="mx-auto max-w-7xl px-6 lg:px-8">
+			<div class="mx-auto max-w-3xl">
+				<div class="prose prose-lg dark:prose-invert max-w-none">
+					<h1>Typography Style Guide</h1>
+					<p class="lead">
+						This is a comprehensive typography style guide demonstrating how various text
+						elements appear with Tailwind's typography plugin. The prose classes
+						automatically style all standard HTML elements for optimal readability.
+					</p>
+
+					<h2>Introduction to Lorem Ipsum</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+						nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+					<p>
+						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+						fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+						culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+
+					<h2>Headings Hierarchy</h2>
+					<p>
+						The following section demonstrates all heading levels from H1 through H6,
+						showing the typographic hierarchy and size relationships.
+					</p>
+
+					<h3>Third Level Heading</h3>
+					<p>
+						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+						doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+						veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+					</p>
+
+					<h4>Fourth Level Heading</h4>
+					<p>
+						Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
+						quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+					</p>
+
+					<h5>Fifth Level Heading</h5>
+					<p>
+						Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+						adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
+						dolore magnam aliquam quaerat voluptatem.
+					</p>
+
+					<h6>Sixth Level Heading</h6>
+					<p>
+						Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
+						laboriosam, nisi ut aliquid ex ea commodi consequatur?
+					</p>
+
+					<h2>Text Formatting</h2>
+					<p>
+						This paragraph demonstrates various <strong>inline text formatting</strong> options.
+						You can use <em>emphasis</em> to highlight important points, or combine them for
+						<strong><em>strong emphasis</em></strong>. You can also use
+						<code>inline code</code> for technical references.
+					</p>
+					<p>
+						Here's a <a href="#">standard hyperlink</a> that demonstrates link styling. Links
+						should be easily distinguishable from regular text while maintaining readability.
+					</p>
+
+					<h2>Lists and Enumerations</h2>
+					<p>Unordered lists are perfect for non-sequential items:</p>
+					<ul>
+						<li>First item in the unordered list</li>
+						<li>Second item with more detailed explanation and longer text content</li>
+						<li>
+							Third item with nested content:
+							<ul>
+								<li>Nested item one</li>
+								<li>Nested item two</li>
+								<li>Nested item three</li>
+							</ul>
+						</li>
+						<li>Fourth item at the top level</li>
+					</ul>
+
+					<p>Ordered lists work better for sequential steps or rankings:</p>
+					<ol>
+						<li>First step in the process</li>
+						<li>Second step with additional context and explanation</li>
+						<li>
+							Third step with sub-steps:
+							<ol>
+								<li>Sub-step alpha</li>
+								<li>Sub-step beta</li>
+								<li>Sub-step gamma</li>
+							</ol>
+						</li>
+						<li>Final step to complete the process</li>
+					</ol>
+
+					<h2>Blockquotes</h2>
+					<p>Blockquotes are ideal for highlighting important statements or citations:</p>
+					<blockquote>
+						<p>
+							"The typography of a website is just as important as its functionality.
+							Well-crafted typography enhances readability, establishes visual hierarchy,
+							and creates a more engaging user experience."
+						</p>
+					</blockquote>
+
+					<h2>Code Blocks</h2>
+					<p>For larger code samples, use code blocks with proper formatting:</p>
+					<pre set:html={`<code>function calculateSum(a, b) {
+  return a + b;
+}
+
+const result = calculateSum(5, 3);
+console.log(result); // Output: 8</code>`}></pre>
+
+					<h2>Tables</h2>
+					<p>Tables are automatically styled for clarity and readability:</p>
+					<table>
+						<thead>
+							<tr>
+								<th>Feature</th>
+								<th>Description</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Typography</td>
+								<td>Comprehensive text styling system</td>
+								<td>Active</td>
+							</tr>
+							<tr>
+								<td>Responsive Design</td>
+								<td>Mobile-first approach with breakpoints</td>
+								<td>Active</td>
+							</tr>
+							<tr>
+								<td>Dark Mode</td>
+								<td>Automatic theme switching support</td>
+								<td>Active</td>
+							</tr>
+							<tr>
+								<td>Accessibility</td>
+								<td>WCAG 2.1 AA compliance</td>
+								<td>In Progress</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<h2>Horizontal Rules</h2>
+					<p>Use horizontal rules to create visual separation between sections:</p>
+					<hr />
+
+					<h2>Additional Paragraph Styles</h2>
+					<p>
+						At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+						praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+						excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui
+						officia deserunt mollitia animi, id est laborum et dolorum fuga.
+					</p>
+					<p>
+						Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,
+						cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
+						maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
+						repellendus.
+					</p>
+					<p>
+						Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus
+						saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+						Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
+						voluptatibus maiores alias consequatur aut perferendis doloribus asperiores
+						repellat.
+					</p>
+
+					<h3>Definition Lists</h3>
+					<dl>
+						<dt>Typography</dt>
+						<dd>
+							The art and technique of arranging type to make written language legible,
+							readable, and appealing when displayed.
+						</dd>
+						<dt>Responsive Design</dt>
+						<dd>
+							An approach to web design that makes web pages render well on a variety of
+							devices and window or screen sizes.
+						</dd>
+						<dt>Accessibility</dt>
+						<dd>
+							The practice of making websites usable by as many people as possible,
+							including those with disabilities.
+						</dd>
+					</dl>
+
+					<h2>Conclusion</h2>
+					<p>
+						This style guide demonstrates the comprehensive typography system available
+						through Tailwind's typography plugin. All elements are automatically styled for
+						consistency, readability, and aesthetic appeal across both light and dark themes.
+					</p>
+				</div>
+			</div>
+		</div>
+	</main>
 </MainLayout>

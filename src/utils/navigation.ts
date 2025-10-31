@@ -18,8 +18,16 @@ export interface NavItem {
 	children?: NavChild[];
 }
 
+export interface ActionButton {
+	label: string;
+	path: string;
+	variant?: "default" | "primary" | "secondary" | "outline" | "ghost" | "info" | "success" | "warning" | "error";
+	icon?: string;
+}
+
 export interface NavConfig {
 	navigation: NavItem[];
+	actionButtons?: ActionButton[];
 }
 
 /**
@@ -37,6 +45,17 @@ export function getNavConfig(): NavConfig {
 export function getNavItems(): NavItem[] {
 	const config = getNavConfig();
 	return config.navigation;
+}
+
+/**
+ * Get action buttons configuration
+ * @returns Array of action buttons (max 3)
+ */
+export function getActionButtons(): ActionButton[] {
+	const config = getNavConfig();
+	const buttons = config.actionButtons || [];
+	// Limit to 3 buttons for UI consistency
+	return buttons.slice(0, 3);
 }
 
 /**

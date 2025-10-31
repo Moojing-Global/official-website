@@ -6,18 +6,18 @@ import "../styles/global.css";
 import "@tailwindplus/elements";
 
 export interface Props {
-	// Support passing a seoMeta object directly
-	seoMeta?: SeoMeta;
-	// Or individual props (backwards compatible)
-	title?: string;
-	description?: string;
-	canonical?: string;
-	image?: string;
-	imageAlt?: string;
-	type?: "website" | "article";
-	noindex?: boolean;
-	author?: string;
-	pubDate?: Date;
+    // Support passing a seoMeta object directly
+    seoMeta?: SeoMeta;
+    // Or individual props (backwards compatible)
+    title?: string;
+    description?: string;
+    canonical?: string;
+    image?: string;
+    imageAlt?: string;
+    type?: "website" | "article";
+    noindex?: boolean;
+    author?: string;
+    pubDate?: Date;
 }
 
 // Get current path for active nav state
@@ -25,23 +25,23 @@ const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
-<html lang="en" class="font-sans">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<BaseHead {...Astro.props} />
-		<script is:inline>
-			// Load theme from localStorage before page renders to avoid flash
-			try {
-				const theme = localStorage.getItem("theme") || "light";
-				if (theme === "dark") {
-					document.documentElement.classList.add("dark");
-				}
-			} catch (e) {}
-		</script>
-	</head>
-	<body class="bg-background font-sans">
-		<Navbar currentPath={currentPath} />
-		<slot />
-	</body>
+<html lang="en" class="h-full font-sans">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <BaseHead {...Astro.props} />
+        <script is:inline>
+            // Load theme from localStorage before page renders to avoid flash
+            try {
+                const theme = localStorage.getItem("theme") || "light";
+                if (theme === "dark") {
+                    document.documentElement.classList.add("dark");
+                }
+            } catch (e) {}
+        </script>
+    </head>
+    <body class="bg-background h-full font-sans pt-16">
+        <Navbar currentPath={currentPath} />
+        <slot />
+    </body>
 </html>
