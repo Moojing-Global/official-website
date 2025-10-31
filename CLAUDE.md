@@ -8,13 +8,14 @@ This is an **early-stage MVP** for a B2B tech company website with blogging capa
 
 **Current State:**
 - ✅ Astro v5 + TypeScript + Tailwind CSS v4 foundation
-- ✅ DaisyUI component library for UI components
+- ✅ Starwind component system for UI components
 - ✅ Blog with content collections and Pages CMS integration
 - ✅ SEO meta tags and structured data (article schema)
 - ✅ Cloudflare Pages deployment configuration
 - ⚠️ Homepage is "Coming Soon" placeholder
 - ⚠️ Minimal components (no header, footer, navigation)
 - ⚠️ Static images only (no optimization)
+- ⚠️ Clean slate pages ready for Starwind component integration
 
 **Key Metrics:**
 - Build time: ~1.25s
@@ -73,7 +74,6 @@ Configured in `tsconfig.json`:
 **Components:**
 - `BaseHead.astro` - Handles all SEO meta tags, Open Graph, Twitter Cards, and article schema
 - `MainLayout.astro` - Base page layout that wraps content and delegates SEO props to BaseHead
-- `Navbar.astro` - Dynamic navigation component that reads `navMeta` from pages
 - `Favicon.astro` - Manages favicon links (files in `public/brand/favicon/`)
 
 **Page Frontmatter Pattern:**
@@ -119,9 +119,8 @@ export const navMeta = {
 - `pubDate` - Publication date for article schema (adds `article:published_time` meta tag)
 
 **NavMeta Properties (Navigation):**
-- `title` - Display text in navigation menu
-- `menuOrder` - Sort order for navigation links (ascending)
-- Only pages with `navMeta.menuOrder` appear in navigation
+- `title` - Display text in navigation menu (reserved for future navigation component)
+- `menuOrder` - Sort order for navigation links (reserved for future navigation component)
 
 **Image URL Encoding:**
 - Image paths are automatically encoded segment-by-segment to handle spaces and special characters
@@ -157,24 +156,30 @@ Configured for **Cloudflare Pages** with the adapter `@astrojs/cloudflare`:
 ### Styling Approach
 
 - **Tailwind CSS v4**: Uses zero-config approach with `@import "tailwindcss"` in `src/styles/global.css`
-- **DaisyUI**: Component library built on Tailwind CSS for pre-styled UI components (buttons, cards, navbars, etc.)
-  - Provides semantic component classes that work seamlessly with Tailwind utilities
-  - Custom themes configured in `src/styles/global.css`: `moojing-light` (default) and `moojing-dark` (prefers dark mode)
-  - When building UI components, prefer DaisyUI components for consistency and maintainability
-  - **DO NOT use dark: variants** - theme switching is handled automatically by DaisyUI's theme system
+- **Starwind**: Component system built on Tailwind CSS for UI components
+  - Configuration: `starwind.config.json` (base color: gray, CSS variables enabled)
+  - Styles: `src/styles/starwind.css` (imported in `global.css`)
+  - Component directory: `src/components`
+  - When building UI components, use Starwind's semantic color system
+  - **Theme System**: Uses `.dark` class for dark mode (not `dark:` variants at class level)
 
-**DaisyUI Semantic Colors:**
-Use these semantic color classes instead of specific colors (they adapt to the active theme):
-- `bg-base-100` - Page background
-- `bg-base-200` - Secondary background (cards, inputs)
-- `bg-base-300` - Tertiary background (hover states)
-- `text-base-content` - Primary text color
-- `text-base-content/60` - Muted text (60% opacity)
-- `bg-primary`, `text-primary` - Primary brand color
-- `bg-secondary`, `text-secondary` - Secondary brand color
-- `bg-accent`, `text-accent` - Accent color
-- `bg-neutral`, `text-neutral` - Neutral color
-- Status colors: `bg-info`, `bg-success`, `bg-warning`, `bg-error`
+**Starwind Semantic Colors:**
+Use these semantic color classes that adapt to light/dark theme via CSS variables:
+- `bg-background` - Page background
+- `bg-card`, `text-card-foreground` - Card containers
+- `bg-muted`, `text-muted-foreground` - Secondary/muted elements
+- `text-foreground` - Primary text color
+- `bg-primary`, `text-primary-foreground` - Primary brand color
+- `bg-secondary`, `text-secondary-foreground` - Secondary brand color
+- `bg-accent`, `text-accent-foreground` - Accent color
+- Status colors: `bg-info`, `bg-success`, `bg-warning`, `bg-error` (with `-foreground` variants)
+- `border`, `input`, `outline` - Border and input styling
+
+**Dark Mode:**
+- Theme is controlled via `.dark` class on `<html>` element
+- Theme preference stored in localStorage as `"light"` or `"dark"`
+- Theme script in `MainLayout.astro` prevents flash of unstyled content
+- All color variables automatically adapt via CSS variable definitions in `starwind.css`
 
 **Other Features:**
 - **No custom config file**: Relying on Tailwind v4's defaults (no `tailwind.config.js`)

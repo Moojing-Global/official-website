@@ -18,19 +18,23 @@
     "@fontsource/geist-sans": "^5.2.5",
     "@iconify-json/tabler": "^1.2.23",
     "@iconify/icons-tabler": "^1.2.95",
-    "@tailwindcss/vite": "^4.1.16",
+    "@tabler/icons": "^3",
+    "@tailwindcss/forms": "^0.5",
+    "@tailwindcss/vite": "^4",
     "@tailwindplus/elements": "^1.0.18",
     "astro": "^5.15.1",
     "astro-icon": "^1.1.5",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.1",
-    "tailwindcss": "^4.1.16",
+    "tailwind-merge": "^3",
+    "tailwind-variants": "^3",
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19",
-    "daisyui": "^5.3.10"
+    "@tailwindcss/typography": "^0.5.19"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.9.5"

@@ -9,7 +9,7 @@ import { siteConfig } from "./src/config/siteConfig.ts";
 
 // https://astro.build/config
 export default defineConfig({
-    site: siteConfig.url,
+	site: siteConfig.url,
 
     vite: {
         plugins: [tailwindcss()],

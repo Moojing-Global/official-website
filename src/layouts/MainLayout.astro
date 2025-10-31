@@ -1,6 +1,5 @@
 ---
 import BaseHead from "@components/BaseHead.astro";
-import Navbar from "@components/Navbar.astro";
 import type { SeoMeta } from "@components/BaseHead.astro";
 import "../styles/global.css";
 import "@tailwindplus/elements";
@@ -22,7 +21,7 @@ export interface Props {
 ---
 
 <!doctype html>
-<html lang="en" class="font-sans" data-theme="moojing-light">
+<html lang="en" class="font-sans">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,13 +29,14 @@ export interface Props {
 		<script is:inline>
 			// Load theme from localStorage before page renders to avoid flash
 			try {
-				const theme = localStorage.getItem("theme") || "moojing-light";
-				document.documentElement.setAttribute("data-theme", theme);
+				const theme = localStorage.getItem("theme") || "light";
+				if (theme === "dark") {
+					document.documentElement.classList.add("dark");
+				}
 			} catch (e) {}
 		</script>
 	</head>
-	<body class="bg-base-200 font-sans">
-		<Navbar />
+	<body class="bg-background font-sans">
 		<slot />
 	</body>
 </html>

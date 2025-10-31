@@ -1,6 +1,5 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
-import { Icon } from "astro-icon/components";
 
 // SEO metadata
 export const seoMeta = {
@@ -17,18 +16,10 @@ export const navMeta = {
 ---
 
 <MainLayout {seoMeta}>
-    <div
-        class="container mx-auto flex min-h-[70vh] max-w-4xl flex-col items-center justify-center space-y-8 px-4 text-center"
-    >
-        <div class="flex items-center gap-4 text-5xl">
-            <h1 class="font-black">Coming Soon</h1>
-            <Icon name="tabler:accessible" class="text-red-400" />
-        </div>
-        <p class="text-base-content/70 text-xl">
+    <div class="container mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-center px-4 text-center">
+        <h1 class="text-5xl font-black">Coming Soon</h1>
+        <p class="mt-4 text-xl text-muted-foreground">
             Our website is under construction. Stay tuned for exciting updates!
         </p>
-        <a href="/style-guide" class="btn btn-primary btn-lg">
-            View Style Guide
-        </a>
     </div>
 </MainLayout>
