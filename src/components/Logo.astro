@@ -1,0 +1,38 @@
+---
+/**
+ * Logo Component
+ * Displays the MooJing wordmark with theme-aware variants (light/dark)
+ * Supports responsive sizing via class prop
+ */
+
+interface Props {
+	/** Additional classes for the logo container */
+	class?: string;
+	/** Additional classes for the image element */
+	imgClass?: string;
+}
+
+const { class: className = "", imgClass = "h-10 w-auto" } = Astro.props;
+---
+
+<a href="/" class={`flex items-center ${className}`} aria-label="Home">
+	<picture class="dark:hidden min-w-0 max-w-full">
+		<source srcset="/brand/MooJing_Wordmark.webp" type="image/webp" />
+		<img
+			src="/brand/MooJing_Wordmark.png"
+			alt="MooJing Logo"
+			class={imgClass}
+		/>
+	</picture>
+	<picture class="hidden dark:block min-w-0 max-w-full">
+		<source
+			srcset="/brand/MooJing_Wordmark_White.webp"
+			type="image/webp"
+		/>
+		<img
+			src="/brand/MooJing_Wordmark_White.png"
+			alt="MooJing Logo"
+			class={imgClass}
+		/>
+	</picture>
+</a>
