@@ -1,0 +1,270 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { Button } from "@components/starwind/button";
+
+export const seoMeta = {
+	title: "MoListening - Social Media Monitoring & Sentiment Analysis",
+	description:
+		"Monitor brand reputation and understand customer sentiment with MoListening. Real-time social media tracking, sentiment analysis, and crisis detection.",
+	canonical: "/moinsights/molistening",
+	image: "/media/social-listening.jpg",
+	imageAlt: "Social media listening dashboard",
+};
+---
+
+<MainLayout {seoMeta}>
+	<!-- Hero Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="grid items-center gap-12 lg:grid-cols-2">
+				<div>
+					<div class="text-primary mb-4 text-sm font-semibold uppercase tracking-wide">
+						MoInsights Suite
+					</div>
+					<h1 class="text-foreground mb-6 text-4xl font-bold leading-tight md:text-5xl">
+						MoListening
+					</h1>
+					<p class="text-muted-foreground mb-8 text-lg md:text-xl">
+						Turn social conversations into strategic insights. Monitor your brand reputation, understand customer sentiment, and respond to crises before they escalate.
+					</p>
+					<div class="flex flex-wrap gap-4">
+						<Button href="/contact" variant="primary" size="lg">
+							Request Demo
+						</Button>
+						<Button href="/moinsights" variant="outline" size="lg">
+							Back to Suite
+						</Button>
+					</div>
+				</div>
+				<div>
+					<img
+						src="/media/social-listening.jpg"
+						alt="Social listening"
+						class="rounded-lg shadow-2xl"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Features Section -->
+	<section class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Key Features
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					Comprehensive social intelligence at your fingertips
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Multi-Platform Coverage
+					</h3>
+					<p class="text-muted-foreground">
+						Monitor conversations across Twitter, Facebook, Instagram, LinkedIn, Reddit, news sites, blogs, and forums from a single dashboard.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Sentiment Analysis
+					</h3>
+					<p class="text-muted-foreground">
+						AI-powered sentiment detection categorizes mentions as positive, negative, or neutral with high accuracy across 50+ languages.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Crisis Detection
+					</h3>
+					<p class="text-muted-foreground">
+						Detect potential PR crises early with spike detection algorithms. Get instant alerts when negative sentiment surges.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Influencer Identification
+					</h3>
+					<p class="text-muted-foreground">
+						Discover key influencers and brand advocates in your industry. Track their reach, engagement, and impact on your brand.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Competitive Benchmarking
+					</h3>
+					<p class="text-muted-foreground">
+						Compare your social performance against competitors. Track share of voice, sentiment trends, and engagement metrics.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Response Management
+					</h3>
+					<p class="text-muted-foreground">
+						Streamline your social media response workflow. Route mentions to the right team members and track response times.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Benefits Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Why MoListening?
+				</h2>
+			</div>
+
+			<div class="grid gap-8 lg:grid-cols-2">
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Protect Your Brand Reputation
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Stay ahead of negative conversations and address customer concerns before they become major issues. Our crisis detection system alerts you instantly when sentiment spikes.
+					</p>
+					<div class="bg-muted rounded-lg p-4">
+						<p class="text-muted-foreground text-sm italic">
+							"MoListening helped us detect and respond to a potential crisis within minutes, saving our brand reputation and customer trust."
+						</p>
+						<p class="text-foreground mt-2 text-sm font-semibold">
+							— Head of Communications, Fortune 500 Retailer
+						</p>
+					</div>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Understand Your Customers
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Go beyond demographics to understand what your customers really think and feel. Discover pain points, desires, and unmet needs directly from social conversations.
+					</p>
+					<ul class="text-muted-foreground space-y-2">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Identify product improvement opportunities
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Discover content that resonates
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Track brand perception over time
+						</li>
+					</ul>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Measure Campaign Impact
+					</h3>
+					<p class="text-muted-foreground">
+						Track the social impact of your marketing campaigns in real-time. Measure reach, engagement, sentiment, and share of voice to optimize your strategy.
+					</p>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Gain Competitive Intelligence
+					</h3>
+					<p class="text-muted-foreground">
+						Monitor competitor activities, product launches, and customer feedback. Identify their weaknesses and capitalize on market opportunities.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Stats Section -->
+	<section class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="grid gap-8 md:grid-cols-4">
+				<div class="text-center">
+					<div class="text-primary mb-2 text-4xl font-bold md:text-5xl">10B+</div>
+					<p class="text-muted-foreground text-lg">Conversations Monitored</p>
+				</div>
+				<div class="text-center">
+					<div class="text-primary mb-2 text-4xl font-bold md:text-5xl">50+</div>
+					<p class="text-muted-foreground text-lg">Languages Supported</p>
+				</div>
+				<div class="text-center">
+					<div class="text-primary mb-2 text-4xl font-bold md:text-5xl">95%</div>
+					<p class="text-muted-foreground text-lg">Sentiment Accuracy</p>
+				</div>
+				<div class="text-center">
+					<div class="text-primary mb-2 text-4xl font-bold md:text-5xl">&lt;1min</div>
+					<p class="text-muted-foreground text-lg">Alert Response Time</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="bg-primary px-4 py-20 text-white">
+		<div class="mx-auto w-full max-w-7xl px-4 text-center">
+			<h2 class="mb-4 text-3xl font-bold md:text-4xl">
+				Start Listening to Your Customers
+			</h2>
+			<p class="mb-8 text-lg opacity-90">
+				Discover what people are saying about your brand right now.
+			</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<Button href="/contact" variant="secondary" size="lg">
+					Schedule Demo
+				</Button>
+				<Button href="/moinsights" variant="outline" size="lg">
+					View All Products
+				</Button>
+			</div>
+		</div>
+	</section>
+</MainLayout>

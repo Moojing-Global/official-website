@@ -1,21 +1,278 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
+import { Button } from "@components/starwind/button";
 
-// SEO metadata
 export const seoMeta = {
-	title: "MoEnterprise",
+	title: "MoEnterprise - Enterprise Data Processing & Consulting",
 	description:
-		"Enterprise solutions and consulting services. Transform your business with our comprehensive suite of tools.",
+		"Scale your data operations with MoEnterprise suite. High-performance data processing, seamless integration, and expert strategic consulting for enterprises.",
 	canonical: "/moenterprise",
+	image: "/media/enterprise-solutions.jpg",
+	imageAlt: "Enterprise data solutions",
 };
 ---
 
 <MainLayout {seoMeta}>
-	<main class="container mx-auto px-4 py-16">
-		<h1 class="text-4xl font-bold">MoEnterprise</h1>
-		<p class="text-muted-foreground mt-4 text-xl">
-			Enterprise solutions and consulting services
-		</p>
-		<!-- Content placeholder - ready for Starwind components -->
-	</main>
+	<!-- Hero Section -->
+	<section class="px-4 py-20 md:py-32">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="grid items-center gap-12 lg:grid-cols-2">
+				<div>
+					<h1 class="text-foreground mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+						MoEnterprise Suite
+					</h1>
+					<p class="text-muted-foreground mb-8 text-lg md:text-xl">
+						Enterprise-grade infrastructure for mission-critical data operations. Process millions of records, integrate complex systems, and get expert guidance from our consulting team.
+					</p>
+					<div class="flex flex-wrap gap-4">
+						<Button href="/contact" variant="primary" size="lg">
+							Request Consultation
+						</Button>
+						<Button href="#products" variant="secondary" size="lg">
+							Explore Solutions
+						</Button>
+					</div>
+				</div>
+				<div>
+					<img
+						src="/media/enterprise-solutions.jpg"
+						alt="Enterprise solutions"
+						class="rounded-lg shadow-2xl"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Products Grid -->
+	<section id="products" class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Our Solutions
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					Enterprise infrastructure and expertise to power your growth
+				</p>
+			</div>
+
+			<div class="grid gap-8 lg:grid-cols-2">
+				<!-- MoProcessing -->
+				<div class="bg-card border-border flex flex-col rounded-lg border p-8 shadow-sm">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-3 text-2xl font-bold">MoProcessing</h3>
+					<p class="text-muted-foreground mb-6 flex-1">
+						High-performance data processing engine built for scale. Handle millions of transactions per second with fault-tolerant, distributed infrastructure.
+					</p>
+					<ul class="text-muted-foreground mb-6 space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Real-time stream processing
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							ETL pipeline automation
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Multi-source integration
+						</li>
+					</ul>
+					<Button href="/moenterprise/moprocessing" variant="outline" class="mt-auto">
+						Learn More
+					</Button>
+				</div>
+
+				<!-- MoConsult -->
+				<div class="bg-card border-border flex flex-col rounded-lg border p-8 shadow-sm">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-3 text-2xl font-bold">MoConsult</h3>
+					<p class="text-muted-foreground mb-6 flex-1">
+						Strategic consulting from data experts. Get personalized guidance on data strategy, architecture design, and digital transformation initiatives.
+					</p>
+					<ul class="text-muted-foreground mb-6 space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Data strategy development
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Architecture design
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Implementation support
+						</li>
+					</ul>
+					<Button href="/moenterprise/moconsult" variant="outline" class="mt-auto">
+						Learn More
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Enterprise Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Enterprise-Grade Infrastructure
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					Built for scale, security, and reliability
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						High Performance
+					</h3>
+					<p class="text-muted-foreground">
+						Process millions of records per second with our distributed computing infrastructure. Sub-second query response times.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Enterprise Security
+					</h3>
+					<p class="text-muted-foreground">
+						SOC 2 Type II certified, GDPR compliant, with end-to-end encryption. Role-based access control and audit logging.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						99.99% Uptime
+					</h3>
+					<p class="text-muted-foreground">
+						Multi-region redundancy with automatic failover. 24/7 monitoring and incident response by our DevOps team.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Flexible Deployment
+					</h3>
+					<p class="text-muted-foreground">
+						Cloud-hosted, on-premise, or hybrid deployment options. Support for AWS, Azure, GCP, and private data centers.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Scalable Architecture
+					</h3>
+					<p class="text-muted-foreground">
+						Auto-scaling infrastructure grows with your needs. Handle peak loads without manual intervention or performance degradation.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						White-Glove Support
+					</h3>
+					<p class="text-muted-foreground">
+						Dedicated account manager, priority support, and custom SLAs. Direct access to engineering for critical issues.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Stats Section -->
+	<section class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="grid gap-8 md:grid-cols-4">
+				<div class="text-center">
+					<div class="text-primary mb-2 text-4xl font-bold md:text-5xl">100B+</div>
+					<p class="text-muted-foreground text-lg">Records Processed Daily</p>
+				</div>
+				<div class="text-center">
+					<div class="text-primary mb-2 text-4xl font-bold md:text-5xl">10ms</div>
+					<p class="text-muted-foreground text-lg">Average Latency</p>
+				</div>
+				<div class="text-center">
+					<div class="text-primary mb-2 text-4xl font-bold md:text-5xl">99.99%</div>
+					<p class="text-muted-foreground text-lg">Uptime SLA</p>
+				</div>
+				<div class="text-center">
+					<div class="text-primary mb-2 text-4xl font-bold md:text-5xl">500+</div>
+					<p class="text-muted-foreground text-lg">Enterprise Clients</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="bg-primary px-4 py-20 text-white">
+		<div class="mx-auto w-full max-w-7xl px-4 text-center">
+			<h2 class="mb-4 text-3xl font-bold md:text-4xl">
+				Ready to Scale Your Data Operations?
+			</h2>
+			<p class="mb-8 text-lg opacity-90">
+				Talk to our enterprise team about your requirements and get a customized solution.
+			</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<Button href="/contact" variant="secondary" size="lg">
+					Request Consultation
+				</Button>
+				<Button href="/blog" variant="outline" size="lg">
+					View Case Studies
+				</Button>
+			</div>
+		</div>
+	</section>
 </MainLayout>

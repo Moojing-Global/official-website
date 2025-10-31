@@ -1,0 +1,343 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { Button } from "@components/starwind/button";
+
+export const seoMeta = {
+	title: "MoConsult - Strategic Data Consulting Services",
+	description:
+		"Get expert guidance for your data strategy with MoConsult. Data architecture design, digital transformation, and implementation support from experienced consultants.",
+	canonical: "/moenterprise/moconsult",
+	image: "/media/hero-team.jpg",
+	imageAlt: "Consulting team collaboration",
+};
+---
+
+<MainLayout {seoMeta}>
+	<!-- Hero Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="grid items-center gap-12 lg:grid-cols-2">
+				<div>
+					<div class="text-primary mb-4 text-sm font-semibold uppercase tracking-wide">
+						MoEnterprise Suite
+					</div>
+					<h1 class="text-foreground mb-6 text-4xl font-bold leading-tight md:text-5xl">
+						MoConsult
+					</h1>
+					<p class="text-muted-foreground mb-8 text-lg md:text-xl">
+						Strategic guidance from data experts who have built and scaled systems at Fortune 500 companies. Get personalized consulting for your unique challenges.
+					</p>
+					<div class="flex flex-wrap gap-4">
+						<Button href="/contact" variant="primary" size="lg">
+							Schedule Consultation
+						</Button>
+						<Button href="/moenterprise" variant="outline" size="lg">
+							Back to Suite
+						</Button>
+					</div>
+				</div>
+				<div>
+					<img
+						src="/media/hero-team.jpg"
+						alt="Consulting services"
+						class="rounded-lg shadow-2xl"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services Section -->
+	<section class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Consulting Services
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					Comprehensive support for your data journey
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Data Strategy
+					</h3>
+					<p class="text-muted-foreground">
+						Define your data vision, roadmap, and governance framework. Align data initiatives with business objectives.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Architecture Design
+					</h3>
+					<p class="text-muted-foreground">
+						Design scalable, secure data architectures. Modern data lake, warehouse, and lakehouse implementations.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Digital Transformation
+					</h3>
+					<p class="text-muted-foreground">
+						Guide your organization through digital transformation. Change management, process optimization, and training.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Data Governance
+					</h3>
+					<p class="text-muted-foreground">
+						Establish data quality standards, metadata management, and compliance frameworks. GDPR and regulatory support.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Performance Optimization
+					</h3>
+					<p class="text-muted-foreground">
+						Identify bottlenecks and optimize existing systems. Query tuning, infrastructure rightsizing, and cost reduction.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						ML/AI Strategy
+					</h3>
+					<p class="text-muted-foreground">
+						Build machine learning capabilities. Model development, MLOps, and AI ethics frameworks.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Process Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Our Consulting Process
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					A proven methodology for successful engagements
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+				<div class="bg-card border-border rounded-lg border p-6">
+					<div class="bg-primary text-primary-foreground mb-4 flex h-10 w-10 items-center justify-center rounded-full font-bold">
+						1
+					</div>
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Discovery</h3>
+					<p class="text-muted-foreground text-sm">
+						Understand your business objectives, technical landscape, and challenges through workshops and interviews.
+					</p>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-6">
+					<div class="bg-primary text-primary-foreground mb-4 flex h-10 w-10 items-center justify-center rounded-full font-bold">
+						2
+					</div>
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Assessment</h3>
+					<p class="text-muted-foreground text-sm">
+						Analyze current state, identify gaps, and benchmark against industry best practices.
+					</p>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-6">
+					<div class="bg-primary text-primary-foreground mb-4 flex h-10 w-10 items-center justify-center rounded-full font-bold">
+						3
+					</div>
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Strategy</h3>
+					<p class="text-muted-foreground text-sm">
+						Develop recommendations, roadmap, and business case with clear priorities and success metrics.
+					</p>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-6">
+					<div class="bg-primary text-primary-foreground mb-4 flex h-10 w-10 items-center justify-center rounded-full font-bold">
+						4
+					</div>
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Execution</h3>
+					<p class="text-muted-foreground text-sm">
+						Support implementation with hands-on guidance, training, and ongoing optimization.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Team Section -->
+	<section class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Our Expertise
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					Seasoned professionals with deep industry experience
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-2">
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-3 text-xl font-semibold">
+						Industry Veterans
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Our consultants have led data initiatives at companies like Google, Amazon, Microsoft, and top financial institutions. Average 15+ years of experience.
+					</p>
+					<div class="flex flex-wrap gap-2">
+						<span class="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs">Cloud Architecture</span>
+						<span class="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs">Big Data</span>
+						<span class="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs">ML/AI</span>
+						<span class="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs">Data Governance</span>
+					</div>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-3 text-xl font-semibold">
+						Certified Professionals
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Team holds certifications from major cloud providers and industry organizations. Continuous learning ensures cutting-edge expertise.
+					</p>
+					<div class="flex flex-wrap gap-2">
+						<span class="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs">AWS Certified</span>
+						<span class="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs">Azure Solutions Architect</span>
+						<span class="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs">GCP Professional</span>
+					</div>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-3 text-xl font-semibold">
+						Cross-Industry Experience
+					</h3>
+					<p class="text-muted-foreground">
+						We've worked across financial services, healthcare, retail, manufacturing, and technology sectors. Deep understanding of industry-specific challenges and requirements.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-3 text-xl font-semibold">
+						Thought Leadership
+					</h3>
+					<p class="text-muted-foreground">
+						Regular speakers at industry conferences, published authors, and active contributors to open-source projects. Recognized experts in the data community.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Engagement Models Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Flexible Engagement Models
+				</h2>
+			</div>
+
+			<div class="grid gap-8 lg:grid-cols-3">
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Advisory
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Strategic guidance and recommendations for specific challenges. Ideal for validation of internal plans or getting expert perspective.
+					</p>
+					<ul class="text-muted-foreground space-y-2 text-sm">
+						<li>• Monthly retainer</li>
+						<li>• Regular check-ins</li>
+						<li>• Ad-hoc support</li>
+					</ul>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Project-Based
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Fixed-scope engagements with defined deliverables and timelines. Best for well-defined initiatives with clear outcomes.
+					</p>
+					<ul class="text-muted-foreground space-y-2 text-sm">
+						<li>• Fixed price</li>
+						<li>• Defined timeline</li>
+						<li>• Clear deliverables</li>
+					</ul>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Staff Augmentation
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Embed consultants within your team for hands-on implementation support. Flexible duration from months to years.
+					</p>
+					<ul class="text-muted-foreground space-y-2 text-sm">
+						<li>• Time & materials</li>
+						<li>• Integrated with team</li>
+						<li>• Knowledge transfer</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="bg-primary px-4 py-20 text-white">
+		<div class="mx-auto w-full max-w-7xl px-4 text-center">
+			<h2 class="mb-4 text-3xl font-bold md:text-4xl">
+				Ready to Transform Your Data Strategy?
+			</h2>
+			<p class="mb-8 text-lg opacity-90">
+				Schedule a free consultation to discuss your challenges and goals.
+			</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<Button href="/contact" variant="secondary" size="lg">
+					Schedule Consultation
+				</Button>
+				<Button href="/moenterprise" variant="outline" size="lg">
+					View All Solutions
+				</Button>
+			</div>
+		</div>
+	</section>
+</MainLayout>

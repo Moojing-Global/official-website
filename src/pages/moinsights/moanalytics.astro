@@ -1,0 +1,315 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { Button } from "@components/starwind/button";
+
+export const seoMeta = {
+	title: "MoAnalytics - Business Intelligence & Data Visualization",
+	description:
+		"Transform data into insights with MoAnalytics. Custom dashboards, interactive reports, and advanced data visualization for enterprise decision-making.",
+	canonical: "/moinsights/moanalytics",
+	image: "/media/analytics-dashboard.jpg",
+	imageAlt: "Business intelligence dashboard",
+};
+---
+
+<MainLayout {seoMeta}>
+	<!-- Hero Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="grid items-center gap-12 lg:grid-cols-2">
+				<div>
+					<div class="text-primary mb-4 text-sm font-semibold uppercase tracking-wide">
+						MoInsights Suite
+					</div>
+					<h1 class="text-foreground mb-6 text-4xl font-bold leading-tight md:text-5xl">
+						MoAnalytics
+					</h1>
+					<p class="text-muted-foreground mb-8 text-lg md:text-xl">
+						Empower your team with advanced business intelligence. Build custom dashboards, create interactive reports, and visualize complex data with ease.
+					</p>
+					<div class="flex flex-wrap gap-4">
+						<Button href="/contact" variant="primary" size="lg">
+							Request Demo
+						</Button>
+						<Button href="/moinsights" variant="outline" size="lg">
+							Back to Suite
+						</Button>
+					</div>
+				</div>
+				<div>
+					<img
+						src="/media/analytics-dashboard.jpg"
+						alt="Analytics dashboard"
+						class="rounded-lg shadow-2xl"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Features Section -->
+	<section class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Key Features
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					Everything you need for data-driven decision making
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Custom Dashboards
+					</h3>
+					<p class="text-muted-foreground">
+						Build personalized dashboards with drag-and-drop simplicity. Choose from dozens of chart types and widgets to visualize your data.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Interactive Reports
+					</h3>
+					<p class="text-muted-foreground">
+						Create dynamic reports with drill-down capabilities. Let stakeholders explore data at their own pace with filters and interactive elements.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Data Visualization
+					</h3>
+					<p class="text-muted-foreground">
+						Transform complex datasets into clear, beautiful visualizations. Support for charts, graphs, heatmaps, geographic maps, and more.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Multi-Source Integration
+					</h3>
+					<p class="text-muted-foreground">
+						Connect to databases, APIs, spreadsheets, and cloud services. Combine data from multiple sources in a single view.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Real-Time Updates
+					</h3>
+					<p class="text-muted-foreground">
+						Dashboards refresh automatically with live data. Set custom refresh intervals or update on-demand for the latest insights.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Collaboration Tools
+					</h3>
+					<p class="text-muted-foreground">
+						Share dashboards and reports with your team. Add comments, annotations, and schedule automated distribution via email.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Capabilities Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Advanced Capabilities
+				</h2>
+			</div>
+
+			<div class="grid gap-8 lg:grid-cols-2">
+				<div class="flex gap-4">
+					<div class="flex-shrink-0">
+						<div class="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-lg">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+							</svg>
+						</div>
+					</div>
+					<div>
+						<h3 class="text-foreground mb-2 text-xl font-semibold">Calculated Metrics</h3>
+						<p class="text-muted-foreground">
+							Create custom calculations and KPIs using our formula editor. Support for complex aggregations, statistical functions, and business logic.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex gap-4">
+					<div class="flex-shrink-0">
+						<div class="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-lg">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+							</svg>
+						</div>
+					</div>
+					<div>
+						<h3 class="text-foreground mb-2 text-xl font-semibold">Export & Embed</h3>
+						<p class="text-muted-foreground">
+							Export reports to PDF, Excel, or PowerPoint. Embed dashboards in your internal tools and portals via iframe or API.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex gap-4">
+					<div class="flex-shrink-0">
+						<div class="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-lg">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+							</svg>
+						</div>
+					</div>
+					<div>
+						<h3 class="text-foreground mb-2 text-xl font-semibold">Access Control</h3>
+						<p class="text-muted-foreground">
+							Granular permissions control who can view, edit, or share dashboards. Row-level security ensures users only see authorized data.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex gap-4">
+					<div class="flex-shrink-0">
+						<div class="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-lg">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+							</svg>
+						</div>
+					</div>
+					<div>
+						<h3 class="text-foreground mb-2 text-xl font-semibold">Performance Optimization</h3>
+						<p class="text-muted-foreground">
+							Built-in caching and query optimization handle millions of rows with ease. Sub-second response times even on complex queries.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Use Cases Section -->
+	<section class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Built for Every Team
+				</h2>
+			</div>
+
+			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Marketing</h3>
+					<p class="text-muted-foreground text-sm">
+						Campaign performance, attribution modeling, customer journey analysis
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Sales</h3>
+					<p class="text-muted-foreground text-sm">
+						Pipeline metrics, forecast accuracy, rep performance tracking
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Finance</h3>
+					<p class="text-muted-foreground text-sm">
+						Revenue analysis, budget vs actuals, financial forecasting
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Operations</h3>
+					<p class="text-muted-foreground text-sm">
+						Process efficiency, resource utilization, supply chain visibility
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Product</h3>
+					<p class="text-muted-foreground text-sm">
+						Feature adoption, user engagement, product health metrics
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">HR</h3>
+					<p class="text-muted-foreground text-sm">
+						Headcount planning, retention analysis, diversity metrics
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Customer Success</h3>
+					<p class="text-muted-foreground text-sm">
+						Health scores, churn prediction, expansion opportunities
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Executive</h3>
+					<p class="text-muted-foreground text-sm">
+						Company KPIs, strategic initiatives, board reporting
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="bg-primary px-4 py-20 text-white">
+		<div class="mx-auto w-full max-w-7xl px-4 text-center">
+			<h2 class="mb-4 text-3xl font-bold md:text-4xl">
+				Transform Your Data into Insights
+			</h2>
+			<p class="mb-8 text-lg opacity-90">
+				See how MoAnalytics can help your team make better decisions faster.
+			</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<Button href="/contact" variant="secondary" size="lg">
+					Schedule Demo
+				</Button>
+				<Button href="/moinsights" variant="outline" size="lg">
+					View All Products
+				</Button>
+			</div>
+		</div>
+	</section>
+</MainLayout>

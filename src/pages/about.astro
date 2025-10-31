@@ -5,11 +5,211 @@ import MainLayout from "@layouts/MainLayout.astro";
 export const seoMeta = {
 	title: "About Us",
 	description:
-		"Learn more about our company, mission, and the team behind our success.",
+		"Learn more about our company, mission, and the team behind our success. We're transforming businesses through data-driven insights and enterprise solutions.",
 	canonical: "/about",
+	image: "/media/hero-team.jpg",
+	imageAlt: "Our team working together",
 };
 ---
 
 <MainLayout {seoMeta}>
-	<!-- Empty placeholder - ready for Starwind components -->
+	<!-- Hero Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="text-center">
+				<h1 class="text-foreground mb-6 text-4xl font-bold md:text-5xl">
+					About Us
+				</h1>
+				<p
+					class="text-muted-foreground mx-auto max-w-3xl text-lg md:text-xl"
+				>
+					We're on a mission to empower businesses with the insights
+					they need to thrive in the data-driven economy.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Mission Section -->
+	<section class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="grid items-center gap-12 lg:grid-cols-2">
+				<div>
+					<h2
+						class="text-foreground mb-4 text-3xl font-bold md:text-4xl"
+					>
+						Our Mission
+					</h2>
+					<p class="text-muted-foreground mb-4 text-lg">
+						We believe that every business deserves access to
+						enterprise-grade analytics and data integration tools.
+						Our mission is to democratize data intelligence by
+						providing powerful, intuitive solutions that transform
+						raw data into actionable insights.
+					</p>
+					<p class="text-muted-foreground text-lg">
+						Through our MoInsights and MoEnterprise suites, we help
+						organizations make informed decisions, understand their
+						customers better, and stay ahead of market trends.
+					</p>
+				</div>
+				<div>
+					<img
+						src="/media/data-insights.jpg"
+						alt="Data insights and analytics"
+						class="rounded-lg shadow-lg"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Values Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Our Values
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					The principles that guide everything we do
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-3">
+				<div class="bg-card rounded-lg p-6 text-center">
+					<div
+						class="bg-primary/10 text-primary mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-8 w-8"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+							></path>
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Trust & Transparency
+					</h3>
+					<p class="text-muted-foreground">
+						We build relationships based on honesty, integrity, and
+						open communication with our clients.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6 text-center">
+					<div
+						class="bg-primary/10 text-primary mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-8 w-8"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M13 10V3L4 14h7v7l9-11h-7z"
+							></path>
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Innovation
+					</h3>
+					<p class="text-muted-foreground">
+						We continuously push boundaries to deliver cutting-edge
+						solutions that solve real business challenges.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6 text-center">
+					<div
+						class="bg-primary/10 text-primary mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-8 w-8"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+							></path>
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Customer Success
+					</h3>
+					<p class="text-muted-foreground">
+						Your success is our success. We're committed to
+						delivering measurable results and exceptional support.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Stats Section -->
+	<section class="bg-primary px-4 py-20 text-white">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="grid gap-8 md:grid-cols-4">
+				<div class="text-center">
+					<div class="mb-2 text-4xl font-bold md:text-5xl">500+</div>
+					<p class="text-lg opacity-90">Enterprise Clients</p>
+				</div>
+				<div class="text-center">
+					<div class="mb-2 text-4xl font-bold md:text-5xl">50M+</div>
+					<p class="text-lg opacity-90">Data Points Processed</p>
+				</div>
+				<div class="text-center">
+					<div class="mb-2 text-4xl font-bold md:text-5xl">99.9%</div>
+					<p class="text-lg opacity-90">Uptime Guarantee</p>
+				</div>
+				<div class="text-center">
+					<div class="mb-2 text-4xl font-bold md:text-5xl">24/7</div>
+					<p class="text-lg opacity-90">Support Available</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Team Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Our Team
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					A diverse group of experts passionate about data and
+					technology
+				</p>
+			</div>
+
+			<div class="bg-card rounded-lg p-8">
+				<p class="text-muted-foreground text-center text-lg">
+					Our team brings together decades of experience in data
+					science, software engineering, business intelligence, and
+					enterprise consulting. We're engineers, analysts, and
+					strategists who share a common goal: making data work for
+					you.
+				</p>
+			</div>
+		</div>
+	</section>
 </MainLayout>

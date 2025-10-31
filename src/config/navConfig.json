@@ -5,7 +5,7 @@
       "path": "/"
     },
     {
-      "title": "MoInsights",
+      "title": "Product",
       "path": "/moinsights",
       "description": "Data-driven insights for your business",
       "viewAllText": "About MoInsights",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "title": "MoEnterprise",
+      "title": "Services",
       "path": "/moenterprise",
       "description": "Enterprise solutions and consulting",
       "viewAllText": "About MoEnterprise",

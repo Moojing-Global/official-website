@@ -1,0 +1,277 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { Button } from "@components/starwind/button";
+
+export const seoMeta = {
+	title: "MoTrends - Market Trend Analysis & Forecasting",
+	description:
+		"Stay ahead of market trends with MoTrends. Real-time trend monitoring, predictive analytics, and competitive intelligence for data-driven decisions.",
+	canonical: "/moinsights/motrends",
+	image: "/media/trends-analysis.jpg",
+	imageAlt: "Market trends analysis dashboard",
+};
+---
+
+<MainLayout {seoMeta}>
+	<!-- Hero Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="grid items-center gap-12 lg:grid-cols-2">
+				<div>
+					<div class="text-primary mb-4 text-sm font-semibold uppercase tracking-wide">
+						MoInsights Suite
+					</div>
+					<h1 class="text-foreground mb-6 text-4xl font-bold leading-tight md:text-5xl">
+						MoTrends
+					</h1>
+					<p class="text-muted-foreground mb-8 text-lg md:text-xl">
+						Identify emerging market trends before your competition. Our advanced analytics platform processes millions of data points to deliver actionable insights in real-time.
+					</p>
+					<div class="flex flex-wrap gap-4">
+						<Button href="/contact" variant="primary" size="lg">
+							Request Demo
+						</Button>
+						<Button href="/moinsights" variant="outline" size="lg">
+							Back to Suite
+						</Button>
+					</div>
+				</div>
+				<div>
+					<img
+						src="/media/trends-analysis.jpg"
+						alt="Trends analysis"
+						class="rounded-lg shadow-2xl"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Features Section -->
+	<section class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Key Features
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					Powerful capabilities to track and predict market movements
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Real-Time Monitoring
+					</h3>
+					<p class="text-muted-foreground">
+						Track market trends as they happen with live data feeds from multiple sources including social media, news, and financial markets.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Predictive Analytics
+					</h3>
+					<p class="text-muted-foreground">
+						Leverage machine learning algorithms to forecast future trends with confidence scores and probability distributions.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Custom Alerts
+					</h3>
+					<p class="text-muted-foreground">
+						Set up intelligent alerts for specific trends, keywords, or market movements. Get notified instantly via email, SMS, or webhook.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Competitive Intelligence
+					</h3>
+					<p class="text-muted-foreground">
+						Monitor your competitors' activities, product launches, and market positioning to stay one step ahead.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Historical Analysis
+					</h3>
+					<p class="text-muted-foreground">
+						Access years of historical data to identify patterns, seasonal trends, and long-term market shifts.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Automated Reporting
+					</h3>
+					<p class="text-muted-foreground">
+						Generate comprehensive trend reports automatically on your schedule. Export to PDF, Excel, or integrate with your BI tools.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Use Cases Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Use Cases
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					How enterprises leverage MoTrends
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-2">
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Product Development
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Identify emerging customer needs and market gaps to inform your product roadmap. Launch products that meet real market demand.
+					</p>
+					<ul class="text-muted-foreground space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Feature prioritization based on market signals
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Innovation opportunity identification
+						</li>
+					</ul>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Marketing Strategy
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Align your marketing campaigns with trending topics and consumer interests. Maximize ROI by timing campaigns perfectly.
+					</p>
+					<ul class="text-muted-foreground space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Campaign timing optimization
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Trending topic integration
+						</li>
+					</ul>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Risk Management
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Detect potential risks early with trend analysis. Monitor regulatory changes, market volatility, and emerging threats.
+					</p>
+					<ul class="text-muted-foreground space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Early warning system
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Regulatory compliance monitoring
+						</li>
+					</ul>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Investment Decisions
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Make informed investment and strategic decisions backed by comprehensive trend data and predictive modeling.
+					</p>
+					<ul class="text-muted-foreground space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Market opportunity assessment
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							ROI forecasting
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="bg-primary px-4 py-20 text-white">
+		<div class="mx-auto w-full max-w-7xl px-4 text-center">
+			<h2 class="mb-4 text-3xl font-bold md:text-4xl">
+				Start Tracking Trends Today
+			</h2>
+			<p class="mb-8 text-lg opacity-90">
+				See how MoTrends can give you a competitive advantage in your market.
+			</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<Button href="/contact" variant="secondary" size="lg">
+					Schedule Demo
+				</Button>
+				<Button href="/moinsights" variant="outline" size="lg">
+					View All Products
+				</Button>
+			</div>
+		</div>
+	</section>
+</MainLayout>

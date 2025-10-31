@@ -1,0 +1,356 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { Button } from "@components/starwind/button";
+
+export const seoMeta = {
+	title: "MoProcessing - High-Performance Data Processing & ETL",
+	description:
+		"Scale your data operations with MoProcessing. Real-time stream processing, automated ETL pipelines, and enterprise integration for mission-critical workloads.",
+	canonical: "/moenterprise/moprocessing",
+	image: "/media/enterprise-solutions.jpg",
+	imageAlt: "Data processing infrastructure",
+};
+---
+
+<MainLayout {seoMeta}>
+	<!-- Hero Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="grid items-center gap-12 lg:grid-cols-2">
+				<div>
+					<div class="text-primary mb-4 text-sm font-semibold uppercase tracking-wide">
+						MoEnterprise Suite
+					</div>
+					<h1 class="text-foreground mb-6 text-4xl font-bold leading-tight md:text-5xl">
+						MoProcessing
+					</h1>
+					<p class="text-muted-foreground mb-8 text-lg md:text-xl">
+						Enterprise-grade data processing engine built for scale and reliability. Handle millions of transactions per second with fault-tolerant, distributed infrastructure.
+					</p>
+					<div class="flex flex-wrap gap-4">
+						<Button href="/contact" variant="primary" size="lg">
+							Request Consultation
+						</Button>
+						<Button href="/moenterprise" variant="outline" size="lg">
+							Back to Suite
+						</Button>
+					</div>
+				</div>
+				<div>
+					<img
+						src="/media/enterprise-solutions.jpg"
+						alt="Data processing"
+						class="rounded-lg shadow-2xl"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Features Section -->
+	<section class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Core Capabilities
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					Built for modern enterprise data workflows
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Real-Time Stream Processing
+					</h3>
+					<p class="text-muted-foreground">
+						Process data streams in real-time with low latency. Support for Kafka, Kinesis, and other streaming platforms.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Automated ETL Pipelines
+					</h3>
+					<p class="text-muted-foreground">
+						Build, schedule, and monitor ETL workflows with our visual pipeline designer. Automatic retry and error handling.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Multi-Source Integration
+					</h3>
+					<p class="text-muted-foreground">
+						Connect to databases, APIs, file systems, cloud storage, and SaaS applications. 200+ pre-built connectors.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Data Quality & Validation
+					</h3>
+					<p class="text-muted-foreground">
+						Built-in data quality checks and validation rules. Automated profiling, cleansing, and deduplication.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Distributed Computing
+					</h3>
+					<p class="text-muted-foreground">
+						Horizontal scaling across clusters. Leverage Spark, Hadoop, or cloud-native processing for massive datasets.
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-2 text-xl font-semibold">
+						Monitoring & Observability
+					</h3>
+					<p class="text-muted-foreground">
+						Real-time pipeline monitoring with detailed metrics. Alerting for failures, performance degradation, and data anomalies.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Architecture Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Enterprise Architecture
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					Built on proven technologies for mission-critical workloads
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-2">
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Fault Tolerance
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Automatic recovery from failures with checkpoint-based state management. Zero data loss guarantees for critical pipelines.
+					</p>
+					<ul class="text-muted-foreground space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Automatic retry with exponential backoff
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Dead letter queues for failed records
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Distributed state snapshots
+						</li>
+					</ul>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Performance Optimization
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Sub-second latency for real-time processing. Throughput optimization with intelligent batching and parallel execution.
+					</p>
+					<ul class="text-muted-foreground space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							In-memory caching for hot data
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Adaptive partitioning strategies
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Query plan optimization
+						</li>
+					</ul>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Security & Compliance
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						End-to-end encryption for data in transit and at rest. Fine-grained access control and comprehensive audit logging.
+					</p>
+					<ul class="text-muted-foreground space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							SOC 2 Type II certified
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							GDPR and CCPA compliant
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							HIPAA ready for healthcare data
+						</li>
+					</ul>
+				</div>
+
+				<div class="bg-card border-border rounded-lg border p-8">
+					<h3 class="text-foreground mb-4 text-2xl font-semibold">
+						Developer Experience
+					</h3>
+					<p class="text-muted-foreground mb-4">
+						Build pipelines with code or visual designer. Full API access, SDKs for popular languages, and CI/CD integration.
+					</p>
+					<ul class="text-muted-foreground space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Infrastructure as Code support
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Version control for pipelines
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Local development environment
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Use Cases Section -->
+	<section class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Common Use Cases
+				</h2>
+			</div>
+
+			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Data Warehousing</h3>
+					<p class="text-muted-foreground text-sm">
+						Load and transform data from multiple sources into your data warehouse
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Real-Time Analytics</h3>
+					<p class="text-muted-foreground text-sm">
+						Process streaming data for live dashboards and instant insights
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Data Lake Integration</h3>
+					<p class="text-muted-foreground text-sm">
+						Ingest, catalog, and process data in your data lake architecture
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Event Processing</h3>
+					<p class="text-muted-foreground text-sm">
+						Build event-driven architectures with complex event processing
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">Data Migration</h3>
+					<p class="text-muted-foreground text-sm">
+						Migrate legacy systems to modern platforms with minimal downtime
+					</p>
+				</div>
+
+				<div class="bg-card rounded-lg p-6">
+					<h3 class="text-foreground mb-2 text-lg font-semibold">ML Pipeline</h3>
+					<p class="text-muted-foreground text-sm">
+						Prepare and transform data for machine learning model training
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="bg-primary px-4 py-20 text-white">
+		<div class="mx-auto w-full max-w-7xl px-4 text-center">
+			<h2 class="mb-4 text-3xl font-bold md:text-4xl">
+				Scale Your Data Processing
+			</h2>
+			<p class="mb-8 text-lg opacity-90">
+				Talk to our team about your data processing requirements.
+			</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<Button href="/contact" variant="secondary" size="lg">
+					Request Consultation
+				</Button>
+				<Button href="/moenterprise" variant="outline" size="lg">
+					View All Solutions
+				</Button>
+			</div>
+		</div>
+	</section>
+</MainLayout>

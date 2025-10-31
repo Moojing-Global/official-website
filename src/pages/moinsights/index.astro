@@ -1,21 +1,271 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
+import { Button } from "@components/starwind/button";
 
 // SEO metadata
 export const seoMeta = {
-	title: "MoInsights",
+	title: "MoInsights - Data Analytics & Intelligence Suite",
 	description:
-		"Data-driven insights for your business. Discover our suite of analytics and intelligence tools.",
+		"Transform data into actionable insights with MoInsights suite. Market trend analysis, social listening, and advanced business intelligence for modern enterprises.",
 	canonical: "/moinsights",
+	image: "/media/analytics-dashboard.jpg",
+	imageAlt: "Analytics dashboard showing data insights",
 };
 ---
 
 <MainLayout {seoMeta}>
-	<main class="container mx-auto px-4 py-16">
-		<h1 class="text-4xl font-bold">MoInsights</h1>
-		<p class="text-muted-foreground mt-4 text-xl">
-			Data-driven insights for your business
-		</p>
-		<!-- Content placeholder - ready for Starwind components -->
-	</main>
+	<!-- Hero Section -->
+	<section class="px-4 py-20 md:py-32">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="grid items-center gap-12 lg:grid-cols-2">
+				<div>
+					<h1 class="text-foreground mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+						MoInsights Suite
+					</h1>
+					<p class="text-muted-foreground mb-8 text-lg md:text-xl">
+						Unlock the power of your data with our comprehensive analytics platform. Make informed decisions with real-time insights, trend analysis, and social intelligence.
+					</p>
+					<div class="flex flex-wrap gap-4">
+						<Button href="/contact" variant="primary" size="lg">
+							Request Demo
+						</Button>
+						<Button href="#products" variant="secondary" size="lg">
+							Explore Products
+						</Button>
+					</div>
+				</div>
+				<div>
+					<img
+						src="/media/analytics-dashboard.jpg"
+						alt="Analytics dashboard"
+						class="rounded-lg shadow-2xl"
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Products Grid -->
+	<section id="products" class="bg-muted px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Our Products
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					Powerful tools designed to give you a competitive edge
+				</p>
+			</div>
+
+			<div class="grid gap-8 lg:grid-cols-3">
+				<!-- MoTrends -->
+				<div class="bg-card border-border flex flex-col rounded-lg border p-8 shadow-sm">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-3 text-2xl font-bold">MoTrends</h3>
+					<p class="text-muted-foreground mb-6 flex-1">
+						Stay ahead with real-time market trend analysis and predictive forecasting. Identify emerging opportunities before your competition.
+					</p>
+					<ul class="text-muted-foreground mb-6 space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Real-time trend monitoring
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Predictive analytics
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Custom alerts
+						</li>
+					</ul>
+					<Button href="/moinsights/motrends" variant="outline" class="mt-auto">
+						Learn More
+					</Button>
+				</div>
+
+				<!-- MoListening -->
+				<div class="bg-card border-border flex flex-col rounded-lg border p-8 shadow-sm">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-3 text-2xl font-bold">MoListening</h3>
+					<p class="text-muted-foreground mb-6 flex-1">
+						Monitor social media conversations and understand sentiment around your brand. Turn social data into strategic insights.
+					</p>
+					<ul class="text-muted-foreground mb-6 space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Multi-platform monitoring
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Sentiment analysis
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Crisis detection
+						</li>
+					</ul>
+					<Button href="/moinsights/molistening" variant="outline" class="mt-auto">
+						Learn More
+					</Button>
+				</div>
+
+				<!-- MoAnalytics -->
+				<div class="bg-card border-border flex flex-col rounded-lg border p-8 shadow-sm">
+					<div class="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+						</svg>
+					</div>
+					<h3 class="text-foreground mb-3 text-2xl font-bold">MoAnalytics</h3>
+					<p class="text-muted-foreground mb-6 flex-1">
+						Advanced business intelligence platform with customizable dashboards and powerful reporting capabilities.
+					</p>
+					<ul class="text-muted-foreground mb-6 space-y-2 text-sm">
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Custom dashboards
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Interactive reports
+						</li>
+						<li class="flex items-start">
+							<svg class="text-primary mr-2 mt-0.5 h-4 w-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+							</svg>
+							Data visualization
+						</li>
+					</ul>
+					<Button href="/moinsights/moanalytics" variant="outline" class="mt-auto">
+						Learn More
+					</Button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Benefits Section -->
+	<section class="px-4 py-20">
+		<div class="mx-auto w-full max-w-7xl px-4">
+			<div class="mb-12 text-center">
+				<h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+					Why MoInsights?
+				</h2>
+				<p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+					Enterprise-grade analytics that drive results
+				</p>
+			</div>
+
+			<div class="grid gap-8 md:grid-cols-2">
+				<div class="flex gap-4">
+					<div class="flex-shrink-0">
+						<div class="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-lg">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+							</svg>
+						</div>
+					</div>
+					<div>
+						<h3 class="text-foreground mb-2 text-xl font-semibold">Real-Time Processing</h3>
+						<p class="text-muted-foreground">
+							Process millions of data points in real-time with our high-performance infrastructure. Get insights as they happen.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex gap-4">
+					<div class="flex-shrink-0">
+						<div class="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-lg">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+							</svg>
+						</div>
+					</div>
+					<div>
+						<h3 class="text-foreground mb-2 text-xl font-semibold">Enterprise Security</h3>
+						<p class="text-muted-foreground">
+							Bank-level encryption, SOC 2 compliance, and role-based access control keep your data secure.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex gap-4">
+					<div class="flex-shrink-0">
+						<div class="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-lg">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+							</svg>
+						</div>
+					</div>
+					<div>
+						<h3 class="text-foreground mb-2 text-xl font-semibold">Seamless Integration</h3>
+						<p class="text-muted-foreground">
+							Connect with your existing tools via APIs, webhooks, and pre-built integrations with popular platforms.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex gap-4">
+					<div class="flex-shrink-0">
+						<div class="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-lg">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+							</svg>
+						</div>
+					</div>
+					<div>
+						<h3 class="text-foreground mb-2 text-xl font-semibold">Customizable Workflows</h3>
+						<p class="text-muted-foreground">
+							Tailor the platform to your specific needs with custom workflows, alerts, and automated actions.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="bg-primary px-4 py-20 text-white">
+		<div class="mx-auto w-full max-w-7xl px-4 text-center">
+			<h2 class="mb-4 text-3xl font-bold md:text-4xl">
+				Ready to Unlock Your Data's Potential?
+			</h2>
+			<p class="mb-8 text-lg opacity-90">
+				Join hundreds of enterprises using MoInsights to drive data-driven decisions.
+			</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<Button href="/contact" variant="secondary" size="lg">
+					Schedule Demo
+				</Button>
+				<Button href="/blog" variant="outline" size="lg">
+					Read Case Studies
+				</Button>
+			</div>
+		</div>
+	</section>
 </MainLayout>

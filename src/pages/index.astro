@@ -4,22 +4,297 @@ import { Button } from "@components/starwind/button";
 
 // SEO metadata
 export const seoMeta = {
-    title: "Coming Soon",
-    description: "Our website is coming soon. Stay tuned for updates!",
+    title: "Enterprise Data Solutions & Analytics",
+    description:
+        "Transform your business with cutting-edge data analytics, social listening, and enterprise integration solutions. Discover MoInsights and MoEnterprise suites.",
     canonical: "/",
+    image: "/media/hero-team.jpg",
+    imageAlt: "Team collaboration and data analytics",
 };
 ---
 
 <MainLayout {seoMeta}>
-    <div
-        class="container mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-center px-4 text-center"
-    >
-        <h1 class="text-5xl font-black">Coming Soon</h1>
-        <p class="text-muted-foreground mt-4 text-xl">
-            Our website is under construction. Stay tuned for exciting updates!
-        </p>
-        <Button href="style-guide" variant="primary" class="mt-8">
-            Link to Style Guide
-        </Button>
-    </div>
+    <!-- Hero Section -->
+    <section class="px-4 py-20 md:py-32">
+        <div class="mx-auto w-full max-w-7xl px-4">
+            <div class="grid items-center gap-12 lg:grid-cols-2">
+                <div>
+                    <h1
+                        class="text-foreground mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl"
+                    >
+                        Empower Your Business with
+                        <span class="text-primary">Data-Driven Insights</span>
+                    </h1>
+                    <p class="text-muted-foreground mb-8 text-lg md:text-xl">
+                        Transform raw data into actionable intelligence with our
+                        comprehensive suite of enterprise analytics and
+                        integration solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <Button href="/moinsights" variant="primary" size="lg">
+                            Explore MoInsights
+                        </Button>
+                        <Button href="/moenterprise" variant="ghost" size="lg">
+                            Enterprise Solutions
+                        </Button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img
+                        src="/media/hero-team.jpg"
+                        alt="Team collaboration"
+                        class="rounded-lg shadow-2xl"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-muted px-4 py-20">
+        <div class="mx-auto w-full max-w-7xl px-4">
+            <div class="mb-12 text-center">
+                <h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+                    Why Choose Us
+                </h2>
+                <p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+                    Industry-leading solutions trusted by enterprises worldwide
+                </p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-card rounded-lg p-6 shadow-sm">
+                    <div
+                        class="bg-primary/10 text-primary mb-4 inline-flex rounded-lg p-3"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-foreground mb-2 text-xl font-semibold">
+                        Real-Time Analytics
+                    </h3>
+                    <p class="text-muted-foreground">
+                        Monitor trends and gain insights from your data in
+                        real-time with our powerful analytics platform.
+                    </p>
+                </div>
+
+                <div class="bg-card rounded-lg p-6 shadow-sm">
+                    <div
+                        class="bg-primary/10 text-primary mb-4 inline-flex rounded-lg p-3"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-foreground mb-2 text-xl font-semibold">
+                        Social Listening
+                    </h3>
+                    <p class="text-muted-foreground">
+                        Understand your audience with comprehensive social media
+                        monitoring and sentiment analysis.
+                    </p>
+                </div>
+
+                <div class="bg-card rounded-lg p-6 shadow-sm">
+                    <div
+                        class="bg-primary/10 text-primary mb-4 inline-flex rounded-lg p-3"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-foreground mb-2 text-xl font-semibold">
+                        Enterprise Integration
+                    </h3>
+                    <p class="text-muted-foreground">
+                        Seamlessly integrate with your existing systems and
+                        streamline data workflows.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="px-4 py-20">
+        <div class="mx-auto w-full max-w-7xl px-4">
+            <div class="mb-12 text-center">
+                <h2 class="text-foreground mb-4 text-3xl font-bold md:text-4xl">
+                    Our Product Suites
+                </h2>
+                <p class="text-muted-foreground mx-auto max-w-2xl text-lg">
+                    Comprehensive solutions tailored for modern enterprises
+                </p>
+            </div>
+
+            <div class="grid gap-8 lg:grid-cols-2">
+                <!-- MoInsights -->
+                <div class="bg-card border-border rounded-lg border p-8">
+                    <h3 class="text-foreground mb-4 text-2xl font-bold">
+                        MoInsights Suite
+                    </h3>
+                    <p class="text-muted-foreground mb-6">
+                        Transform data into actionable insights with our
+                        comprehensive analytics platform
+                    </p>
+                    <ul class="mb-6 space-y-3">
+                        <li class="flex items-start">
+                            <svg
+                                class="text-primary mt-1 mr-2 h-5 w-5 flex-shrink-0"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-foreground"
+                                ><strong>MoTrends</strong> - Market trend analysis
+                                and forecasting</span
+                            >
+                        </li>
+                        <li class="flex items-start">
+                            <svg
+                                class="text-primary mt-1 mr-2 h-5 w-5 flex-shrink-0"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-foreground"
+                                ><strong>MoListening</strong> - Social media monitoring
+                                & sentiment</span
+                            >
+                        </li>
+                        <li class="flex items-start">
+                            <svg
+                                class="text-primary mt-1 mr-2 h-5 w-5 flex-shrink-0"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-foreground"
+                                ><strong>MoAnalytics</strong> - Advanced business
+                                intelligence</span
+                            >
+                        </li>
+                    </ul>
+                    <Button href="/moinsights" variant="primary">
+                        Learn More
+                    </Button>
+                </div>
+
+                <!-- MoEnterprise -->
+                <div class="bg-card border-border rounded-lg border p-8">
+                    <h3 class="text-foreground mb-4 text-2xl font-bold">
+                        MoEnterprise Suite
+                    </h3>
+                    <p class="text-muted-foreground mb-6">
+                        Enterprise-grade solutions for seamless integration and
+                        expert consulting
+                    </p>
+                    <ul class="mb-6 space-y-3">
+                        <li class="flex items-start">
+                            <svg
+                                class="text-primary mt-1 mr-2 h-5 w-5 flex-shrink-0"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-foreground"
+                                ><strong>MoProcessing</strong> - High-performance
+                                data processing</span
+                            >
+                        </li>
+                        <li class="flex items-start">
+                            <svg
+                                class="text-primary mt-1 mr-2 h-5 w-5 flex-shrink-0"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-foreground"
+                                ><strong>MoConsult</strong> - Expert strategic consulting</span
+                            >
+                        </li>
+                    </ul>
+                    <Button href="/moenterprise" variant="primary">
+                        Learn More
+                    </Button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary px-4 py-20 text-white">
+        <div class="mx-auto w-full max-w-7xl px-4 text-center">
+            <h2 class="mb-4 text-3xl font-bold md:text-4xl">
+                Ready to Transform Your Data?
+            </h2>
+            <p class="mb-8 text-lg opacity-90">
+                Get started with a consultation and discover how our solutions
+                can drive your business forward.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <Button href="/contact" variant="default" size="lg">
+                    Contact Us
+                </Button>
+                <Button href="/blog" variant="ghost" size="lg">
+                    Read Our Blog
+                </Button>
+            </div>
+        </div>
+    </section>
 </MainLayout>
