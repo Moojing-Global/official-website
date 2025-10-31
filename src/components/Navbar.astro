@@ -1,0 +1,183 @@
+---
+import { getNavLinks } from "../utils/navigation";
+import { Button } from "@components/starwind/button";
+
+interface Props {
+	currentPath?: string;
+}
+
+const { currentPath = "/" } = Astro.props;
+const navLinks = await getNavLinks();
+
+// Normalize paths for comparison
+const normalizedCurrentPath = currentPath === "" ? "/" : currentPath;
+---
+
+<nav
+	class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+	aria-label="Main navigation"
+>
+	<div class="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+		<!-- Logo -->
+		<a href="/" class="flex items-center gap-2" aria-label="Home">
+			<picture>
+				<source srcset="/brand/MooJing_Logo.webp" type="image/webp" />
+				<img
+					src="/brand/MooJing_Logo.png"
+					alt="MooJing Logo"
+					class="h-10 w-auto"
+					width="40"
+					height="40"
+				/>
+			</picture>
+		</a>
+
+		<!-- Desktop Navigation -->
+		<div class="hidden items-center gap-6 md:flex">
+			{
+				navLinks.map((link) => {
+					const isActive = normalizedCurrentPath === link.href;
+					return (
+						<a
+							href={link.href}
+							class={`text-sm font-medium transition-colors hover:text-foreground ${
+								isActive
+									? "text-foreground"
+									: "text-muted-foreground"
+							}`}
+							aria-current={isActive ? "page" : undefined}
+						>
+							{link.title}
+						</a>
+					);
+				})
+			}
+		</div>
+
+		<!-- Action Buttons -->
+		<div class="hidden items-center gap-3 md:flex">
+			<Button href="/contact" variant="ghost" size="md">
+				Contact Us
+			</Button>
+			<Button href="/login" variant="primary" size="md">
+				Login
+			</Button>
+		</div>
+
+		<!-- Mobile Menu Button -->
+		<button
+			id="mobile-menu-button"
+			class="flex items-center justify-center rounded-md p-2 text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline md:hidden"
+			aria-label="Toggle menu"
+			aria-expanded="false"
+			aria-controls="mobile-menu"
+		>
+			<svg
+				class="h-6 w-6"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				aria-hidden="true"
+			>
+				<path
+					id="menu-icon-open"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M4 6h16M4 12h16M4 18h16"></path>
+				<path
+					id="menu-icon-close"
+					class="hidden"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M6 18L18 6M6 6l12 12"></path>
+			</svg>
+		</button>
+	</div>
+
+	<!-- Mobile Menu -->
+	<div
+		id="mobile-menu"
+		class="hidden border-t border-border bg-background md:hidden"
+		role="dialog"
+		aria-modal="true"
+	>
+		<div class="container mx-auto space-y-1 px-4 py-4">
+			{
+				navLinks.map((link) => {
+					const isActive = normalizedCurrentPath === link.href;
+					return (
+						<a
+							href={link.href}
+							class={`block rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-muted ${
+								isActive
+									? "bg-muted text-foreground"
+									: "text-muted-foreground"
+							}`}
+							aria-current={isActive ? "page" : undefined}
+						>
+							{link.title}
+						</a>
+					);
+				})
+			}
+			<div class="flex flex-col gap-2 pt-4">
+				<Button href="/contact" variant="ghost" size="md" class="w-full">
+					Contact Us
+				</Button>
+				<Button href="/login" variant="primary" size="md" class="w-full">
+					Login
+				</Button>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<script>
+	// Mobile menu toggle
+	const menuButton = document.getElementById("mobile-menu-button");
+	const mobileMenu = document.getElementById("mobile-menu");
+	const menuIconOpen = document.getElementById("menu-icon-open");
+	const menuIconClose = document.getElementById("menu-icon-close");
+
+	menuButton?.addEventListener("click", () => {
+		const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+
+		// Toggle menu visibility
+		mobileMenu?.classList.toggle("hidden");
+
+		// Toggle icons
+		menuIconOpen?.classList.toggle("hidden");
+		menuIconClose?.classList.toggle("hidden");
+
+		// Update aria-expanded
+		menuButton.setAttribute("aria-expanded", String(!isExpanded));
+	});
+
+	// Close mobile menu when clicking outside
+	document.addEventListener("click", (event) => {
+		const target = event.target as HTMLElement;
+		if (
+			!menuButton?.contains(target) &&
+			!mobileMenu?.contains(target) &&
+			!mobileMenu?.classList.contains("hidden")
+		) {
+			mobileMenu?.classList.add("hidden");
+			menuIconOpen?.classList.remove("hidden");
+			menuIconClose?.classList.add("hidden");
+			menuButton?.setAttribute("aria-expanded", "false");
+		}
+	});
+
+	// Close mobile menu on escape key
+	document.addEventListener("keydown", (event) => {
+		if (event.key === "Escape" && !mobileMenu?.classList.contains("hidden")) {
+			mobileMenu?.classList.add("hidden");
+			menuIconOpen?.classList.remove("hidden");
+			menuIconClose?.classList.add("hidden");
+			menuButton?.setAttribute("aria-expanded", "false");
+			menuButton?.focus();
+		}
+	});
+</script>

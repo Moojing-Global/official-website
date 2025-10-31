@@ -2,9 +2,18 @@
 import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
-const title = "Blog";
-const description = "Read our latest blog posts and articles.";
-const canonical = "/blog";
+// SEO metadata
+export const seoMeta = {
+	title: "Blog",
+	description: "Read our latest blog posts and articles.",
+	canonical: "/blog",
+};
+
+// Navigation metadata
+export const navMeta = {
+	title: "Blog",
+	menuOrder: 2,
+};
 
 const posts = await getCollection("blog");
 const sortedPosts = posts.sort(
@@ -13,7 +22,7 @@ const sortedPosts = posts.sort(
 );
 ---
 
-<MainLayout {title} {description} {canonical}>
+<MainLayout {seoMeta}>
   <main>
     <h1>Blog Posts</h1>
     <ul>
