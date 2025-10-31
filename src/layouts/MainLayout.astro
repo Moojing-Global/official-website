@@ -40,8 +40,19 @@ const currentPath = Astro.url.pathname;
             } catch (e) {}
         </script>
     </head>
-    <body class="bg-background h-full font-sans pt-16">
+    <body class="bg-background h-full font-sans">
+        <!-- Skip to main content link (keyboard accessible) -->
+        <a
+            href="#main-content"
+            class="focus:bg-primary focus:text-primary-foreground focus:ring-primary sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:px-4 focus:py-2 focus:ring-2 focus:ring-offset-2 focus:outline-none"
+        >
+            Skip to main content
+        </a>
+
         <Navbar currentPath={currentPath} />
-        <slot />
+
+        <main id="main-content" class="pt-16">
+            <slot />
+        </main>
     </body>
 </html>

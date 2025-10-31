@@ -17,6 +17,7 @@ const sortedPosts = posts.sort(
 ---
 
 <MainLayout {seoMeta}>
+<<<<<<< HEAD
     <section class="px-4 py-16">
         <div class="mx-auto w-full max-w-7xl px-4">
             <div class="mb-12 text-center">
@@ -88,5 +89,26 @@ const sortedPosts = posts.sort(
                 }
             </div>
         </div>
+=======
+    <section class="mx-auto w-full max-w-7xl px-4 py-16">
+        <h1>Blog Posts</h1>
+        <ul>
+            {
+                sortedPosts.map((post) => (
+                    <li>
+                        <a href={`/blog/${post.slug}`}>
+                            <h2>{post.data.title}</h2>
+                            {post.data.description && (
+                                <p>{post.data.description}</p>
+                            )}
+                            <time>
+                                {post.data.pubDate.toLocaleDateString()}
+                            </time>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+>>>>>>> 40f8636d2ed6626c29c31b5226e8b047a688726f
     </section>
 </MainLayout>
