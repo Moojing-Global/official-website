@@ -9,11 +9,12 @@ This is an **early-stage MVP** for a B2B tech company website with blogging capa
 **Current State:**
 - ✅ Astro v5 + TypeScript + Tailwind CSS v4 foundation
 - ✅ Starwind component system for UI components
+- ✅ Navbar with dark mode toggle (Tabler icons via astro-icon)
 - ✅ Blog with content collections and Pages CMS integration
 - ✅ SEO meta tags and structured data (article schema)
 - ✅ Cloudflare Pages deployment configuration
 - ⚠️ Homepage is "Coming Soon" placeholder
-- ⚠️ Minimal components (no header, footer, navigation)
+- ⚠️ Minimal components (no footer)
 - ⚠️ Static images only (no optimization)
 - ⚠️ Clean slate pages ready for Starwind component integration
 
@@ -119,8 +120,8 @@ export const navMeta = {
 - `pubDate` - Publication date for article schema (adds `article:published_time` meta tag)
 
 **NavMeta Properties (Navigation):**
-- `title` - Display text in navigation menu (reserved for future navigation component)
-- `menuOrder` - Sort order for navigation links (reserved for future navigation component)
+- `title` - Display text in navigation menu (used by Navbar component)
+- `menuOrder` - Sort order for navigation links (used by Navbar component to determine order and visibility)
 
 **Image URL Encoding:**
 - Image paths are automatically encoded segment-by-segment to handle spaces and special characters
@@ -148,7 +149,10 @@ Configured for **Cloudflare Pages** with the adapter `@astrojs/cloudflare`:
 
 - `@astrojs/mdx` - MDX support for enhanced markdown
 - `@astrojs/sitemap` - Automatic sitemap generation (uses `siteConfig.url` from config)
-- `astro-icon` - Icon system using Iconify (currently uses `@iconify-json/tabler` icon set)
+- `astro-icon` - Icon system using Iconify
+  - **Icon Set**: Uses `@iconify-json/tabler` for all UI icons
+  - **Usage**: Import with `import { Icon } from "astro-icon/components"`, then use `<Icon name="tabler:icon-name" />`
+  - **Current Usage**: Navbar (sun/moon for theme toggle, menu icons)
 - `@tailwindcss/vite` - Tailwind CSS v4 via Vite plugin (zero-config approach)
 - `@tailwindcss/typography` - Typography plugin for styled prose content in blog posts
 - `@tailwindplus/elements` - Additional Tailwind elements (imported in `MainLayout.astro`)
@@ -159,9 +163,10 @@ Configured for **Cloudflare Pages** with the adapter `@astrojs/cloudflare`:
 - **Starwind**: Component system built on Tailwind CSS for UI components
   - Configuration: `starwind.config.json` (base color: gray, CSS variables enabled)
   - Styles: `src/styles/starwind.css` (imported in `global.css`)
-  - Component directory: `src/components`
-  - When building UI components, use Starwind's semantic color system
-  - **Theme System**: Uses `.dark` class for dark mode (not `dark:` variants at class level)
+  - Component directory: `src/components/starwind/`
+  - **IMPORTANT**: When building UI components, ALWAYS use Starwind's semantic color system (see below)
+  - **Theme System**: Uses `.dark` class on `<html>` element for dark mode (not `dark:` variants at class level)
+  - **Current Components**: Button (`src/components/starwind/button/`), Navbar (`src/components/Navbar.astro`)
 
 **Starwind Semantic Colors:**
 Use these semantic color classes that adapt to light/dark theme via CSS variables:
@@ -178,8 +183,10 @@ Use these semantic color classes that adapt to light/dark theme via CSS variable
 **Dark Mode:**
 - Theme is controlled via `.dark` class on `<html>` element
 - Theme preference stored in localStorage as `"light"` or `"dark"`
-- Theme script in `MainLayout.astro` prevents flash of unstyled content
+- Theme script in `MainLayout.astro` prevents flash of unstyled content (FOUC)
+- Toggle implemented in `Navbar.astro` with sun/moon icons (tabler:sun, tabler:moon)
 - All color variables automatically adapt via CSS variable definitions in `starwind.css`
+- **Best Practice**: Use Starwind semantic colors instead of `dark:` variants for automatic theme adaptation
 
 **Other Features:**
 - **No custom config file**: Relying on Tailwind v4's defaults (no `tailwind.config.js`)
